@@ -112,6 +112,15 @@ section{padding-block:48px 8px;gap:18px}
 .era span{display:inline-block;background:var(--bg);padding:2px 12px;font-family:var(--display);font-stretch:66%;font-weight:800;font-size:22px;text-transform:uppercase}
 .era[hidden]{display:none}
 .col .sum{font-size:15.5px}
+.dep{display:grid;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.dep .row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:14px 16px;border-top:1px solid var(--line)}
+.dep .row:first-child{border-top:0}
+.dep .area{font-family:var(--ui);font-weight:700;font-size:16px}
+.dep .area small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dep .side{font-size:15px;padding-left:10px;border-left:4px solid var(--c)}
+.dep .side b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--c);display:block}
+.dep .row .src{grid-column:1/-1}
+@media (min-width:720px){.dep .row{grid-template-columns:180px minmax(0,1fr) minmax(0,1fr);column-gap:16px}}
 .hb{display:grid;gap:6px}
 .hb .r{display:grid;grid-template-columns:8.5em minmax(0,1fr) 3.6em;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px}
 .hb .t{height:12px;background:var(--soft);border-radius:2px;position:relative}
@@ -180,6 +189,16 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
   <div class="pairs" id="pairs"></div>
 </section>
 
+<section aria-labelledby="h-col">
+  <h2 id="h-col">O Brasil é colônia?</h2>
+  <p class="sub">Colônia é um país que não decide o próprio governo, as próprias leis e a própria moeda. Dependência é outra coisa: precisar muito de alguém para vender, investir ou se financiar. Medimos as duas coisas, para os dois países.</p>
+  <div class="dep" id="dep"></div>
+  <div class="answer">
+    <span class="tag no" style="justify-self:start">Não consta</span>
+    <p><b>O Brasil não é colônia de nenhum dos dois.</b> Elege o próprio governo, faz as próprias leis, tem moeda própria e manteve o julgamento de Bolsonaro mesmo sob tarifa americana. O que existe é dependência, e de tipos diferentes: da China para vender, dos EUA para investimento, finanças e tecnologia.</p>
+  </div>
+</section>
+
 <section aria-labelledby="h-inv">
   <h2 id="h-inv">Onde cada um investe, e em quem</h2>
   <p class="sub">Investir pode ser construir algo novo ou comprar uma empresa que já existe. Isso muda para onde vai o dinheiro e quem fica com o lucro.</p>
@@ -187,6 +206,10 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
     <div class="col" style="--c:var(--us)" id="inv-us"><h3>EUA</h3></div>
     <div class="col" style="--c:var(--cn)" id="inv-cn"><h3>China</h3></div>
   </div>
+  <h3 style="margin-top:8px">O que fica no Brasil e o que volta para fora</h3>
+  <p class="sub">Mesmo quando uma empresa estrangeira investe na própria filial, parte do dinheiro fica aqui: salários, impostos, compras de fornecedores e a fábrica em si. O que sai são os lucros enviados à matriz. Em 2025, o Brasil mandou para fora, em lucros e juros, um saldo de US$ 81,3 bilhões, e recebeu US$ 77,6 bilhões em investimento direto. O Banco Central não divulga essa remessa por país, então comparamos o que dá para medir.</p>
+  <span class="src"><a href="https://www.gazetadopovo.com.br/economia/rombo-contas-externas-recorde-atinge-68-8-bilhoes-2025/" target="_blank" rel="noopener">Gazeta do Povo: contas externas 2025</a></span>
+  <div class="dep" id="ret"></div>
 </section>
 
 <section aria-labelledby="h-neg">
@@ -263,6 +286,7 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
     <ul>
       <li><b>China:</b> compra quase 30% do que o Brasil exporta e o Brasil tem superávit com ela. Investe sobretudo em energia e petróleo, na maior parte comprando empresas que já existiam. O risco é a concentração: quem compra tanto pesa no preço, como mostrou a cota da carne.</li>
       <li><b>EUA:</b> continuam sendo o maior investidor estrangeiro, com cerca de um quarto do estoque, em indústria, finanças e tecnologia. De 2020 a 2026, foram deles as ameaças explícitas com condição política.</li>
+      <li><b>Retorno para o povo:</b> as empresas americanas empregam mais gente no Brasil e exportar para os EUA ocupa mais trabalhadores. O investimento chinês foi quase todo compra de empresas prontas até 2024, e só em 2025 virou obra nova, como as fábricas de carros. Nenhum dos dois divulga quanto lucro leva para fora.</li>
       <li><b>Ativos estratégicos:</b> a China comprou minas e participações, sempre de vendedores privados. A lei de minerais críticos de setembro de 2026 é a primeira regra brasileira com controle sobre operações sensíveis, e chega depois das vendas.</li>
     </ul>
     <p>A pergunta útil não é qual potência é boa, e sim quanto o Brasil depende de cada uma e que regras ele tem para negociar com as duas.</p>
@@ -328,6 +352,12 @@ const S={
   alca:["IHU: o fim da ALCA","https://ihu.unisinos.br/noticias/525411-ha-oito-anos-a-alca-era-enterrada-artigo-de-atilio-a-boron"],
   econ04:["IPS (2004)","https://www.ipsnews.net/?p=13020"],
   parc09:["Gazeta do Povo (2010)","https://www.gazetadopovo.com.br/economia/china-foi-o-principal-parceiro-comercial-do-brasil-em-2009-9pnr7xm4zm5ws7slattbwm2q6"],
+  magnbank:["InfoMoney: cartão de Moraes","https://www.infomoney.com.br/?p=2994184"],
+  cnnAm:["CNN Brasil: dados da Amcham","https://www.cnnbrasil.com.br/blogs/thais-heredia/economia/macroeconomia/analise-investimento-dos-eua-no-brasil-representa-34-do-total/"],
+  bydjobs:["A Tarde: empregos da BYD","https://atarde.com.br/empregos/byd-alcanca-marca-de-mais-de-8-mil-empregos-diretos-em-camacari-1404288"],
+  vistos:["Estado de Minas: vistos de trabalho","https://www.em.com.br/nacional/2026/05/7426791-empresas-importam-mais-de-mil-chineses-por-mes-para-trabalharem-no-brasil.html"],
+  cebcjobs:["Agência Brasil: estudo CEBC e MDIC","https://agenciabrasil.ebc.com.br/economia/noticia/2025-09/emprego-no-comercio-brasil-china-cresce-mais-que-nas-demais-parcerias"],
+  contas:["Gazeta do Povo: contas externas 2025","https://www.gazetadopovo.com.br/economia/rombo-contas-externas-recorde-atinge-68-8-bilhoes-2025/"],
   brics25:["JB: ameaça ao BRICS","https://www.jb.com.br/mundo/2025/07/1056101-trump-ameaca-tarifas-extras-de-10-sobre-os-brics-enquanto-lideres-se-reunem-no-brasil.html"]
 };
 const L=k=>`<a href="${S[k][1]}" target="_blank" rel="noopener">${S[k][0]}</a>`;
@@ -365,6 +395,26 @@ document.getElementById('inv-cn').insertAdjacentHTML('beforeend',
  `<p class="sum"><b>Para quem:</b> na energia, a State Grid controla a CPFL desde 2017 e a CTG opera hidrelétricas como Ilha Solteira, ou seja, recebe parte da conta de luz. No petróleo, CNOOC e CNPC entram em blocos do pré-sal e da Foz do Amazonas, este último junto com a americana Chevron. Em 2025 a maior parte já foi obra nova: fábricas da BYD e da GWM e projetos de energia.</p>`+srcs(["cebcpdf","cebc25"])+
  asset(["2011–2025","Minas","15% da CBMM (2011, sem controle), nióbio e fosfatos da Anglo American pela CMOC (2016), Taboca (2024), níquel da Anglo pela MMG e ouro da Equinox pela CMOC (2025).",["cbmm","cmoc","taboca","cebcpdf"]])+
  asset(["2024–2025","Carros","BYD em Camaçari, onde o MPT resgatou 220 trabalhadores chineses e processou a empresa em R$ 257 milhões. GWM numa antiga fábrica da Mercedes em São Paulo, e Geely com 26,4% da Renault do Brasil.",["byd","cebcpdf"]]));
+
+
+// colony / dependence grid
+const depRow=r=>`<div class="row"><span class="area">${r[0]}<small>${r[1]}</small></span><div class="side" style="--c:var(--us)"><b>EUA</b>${r[2]}</div><div class="side" style="--c:var(--cn)"><b>China</b>${r[3]}</div>${srcs(r[4])}</div>`;
+const DEP=[
+ ["Governo e leis","colônia?","Pressionou com tarifa citando o julgamento de Bolsonaro. O julgamento seguiu e a tarifa foi negociada.","Nenhuma exigência pública sobre leis ou governo brasileiro.",["carta","retira40"]],
+ ["Comércio","dependência","Compra 10,8% das exportações. O Brasil tem déficit com os EUA.","Compra 28,7% das exportações, quase três vezes mais. O Brasil tem superávit com a China.",["mdicUS","mdicCN"]],
+ ["Investimento","dependência","26% de todo o investimento estrangeiro no Brasil, o maior de todos.","Fatia pequena do total, mas concentrada em energia elétrica (43,6%) e petróleo.",["bcIED","cebcpdf"]],
+ ["Finanças e dólar","dependência","Quando os EUA sancionaram Moraes, um banco brasileiro bloqueou o cartão internacional dele. Quem usa o sistema financeiro americano sente a sanção.","O Brasil anunciou títulos em yuan em 2026, ainda pequenos perto da dívida em dólar.",["magnbank","yuan"]],
+ ["Tecnologia","dependência","Nuvem e data centers: Microsoft, Amazon e outras lideram os anúncios de investimento.","Equipamentos: a Huawei diz ser a maior fornecedora de inversores solares no país.",["cni","huawei"]],
+ ["Segurança","dependência","Brasil é aliado extra-OTAN desde 2019. Em 2026, os EUA classificaram CV e PCC como terroristas contra o pedido do governo.","Sem acordo militar com o Brasil.",["otan","pcc"]]
+];
+document.getElementById('dep').innerHTML=DEP.map(depRow).join('');
+const RETR=[
+ ["Empregos diretos","nas empresas","Cerca de 4 mil empresas americanas e perto de 1 milhão de empregos, segundo a Amcham.","Sem total publicado. Exemplo: a BYD tem 8,5 mil empregados em Camaçari, e mais de 90% da última leva é da Bahia. Também trouxe cerca de 2,7 mil trabalhadores chineses com visto.",["cnnAm","bydjobs","vistos"]],
+ ["Obra nova ou compra","de onde vem o emprego","Os maiores anúncios recentes são obra nova: data centers, fábrica de baterias, gás e etanol.","63% do estoque foi compra de empresas que já existiam, como distribuidoras de energia. Em 2025 virou: 61% foi obra nova.",["cni","cebcpdf"]],
+ ["Empregos ligados ao comércio","2022, empregos formais","Exportar para os EUA ocupa cerca de 3,4 milhões de trabalhadores, o maior número entre os parceiros.","Exportar para a China ocupa cerca de 2 milhões. Segundo o estudo, soja e minério usam muita máquina e pouca gente. As importações da China estão ligadas a 5,6 milhões de empregos.",["cebcjobs"]],
+ ["Quem paga a conta","de onde vem a receita","Empresas de tecnologia e finanças vendem serviço para empresas e consumidores brasileiros.","Distribuidoras e hidrelétricas chinesas recebem pela conta de luz, com tarifa definida pela Aneel.",["cni","cebcpdf"]]
+];
+document.getElementById('ret').innerHTML=RETR.map(depRow).join('');
 
 // timeline: side, date, kind, title, text, sources
 const T=[
@@ -413,6 +463,8 @@ document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
 const card=m=>`<article class="myth"><span class="side">${m[0]}</span><span class="claim">${m[1]}</span><div><span class="tag ${m[2]}">${m[3]}</span></div><p>${m[4]}</p>${srcs(m[5])}</article>`;
 const MYTHS=[
  ["Circula contra a China","“A China está colonizando o Brasil”","no","Não consta","Colônia é perder o controle político. A China tem uma fatia pequena do investimento estrangeiro, o Brasil recusou a Rota da Seda e criou regras para minerais críticos. O que é real é a dependência comercial: quase 30% das exportações vão para lá.",["bcIED","rota","minerais"]],
+ ["Circula contra os EUA","“O Brasil é colônia dos EUA”","no","Não consta","O Brasil manteve o julgamento de Bolsonaro mesmo sob tarifa e sanção americanas. A dependência dos EUA é real nas finanças, na tecnologia e no investimento, mas dependência não é colônia.",["carta","bcIED","magnbank"]],
+ ["Circula nos dois lados","“Investimento estrangeiro não deixa nada para o povo”","part","Em parte","Salários, impostos e fábricas ficam aqui; o lucro vai para fora. O retorno depende do tipo: obra nova gera mais emprego que comprar empresa pronta. Exportar para os EUA emprega mais brasileiros que exportar para a China.",["cebcjobs","cebcpdf","contas"]],
  ["Circula contra a China","“Com a China o Brasil só perde”","no","Não consta","O Brasil teve superávit de US$ 29,1 bilhões com a China em 2025 e déficit de US$ 7,5 bilhões com os EUA. A crítica que se sustenta é outra: o Brasil vende matéria-prima e compra produto industrializado.",["mdicCN","mdicUS"]],
  ["Circula a favor da China","“A China só faz parceria, sem interesse”","no","Não consta","A China protege a própria indústria, como na salvaguarda da carne, e já puniu economicamente países como Austrália e Lituânia por divergências políticas.",["salva","lituania","australia"]],
  ["Circula a favor da China","“Os EUA negociam com ameaça, a China com proposta”","part","Em grande parte","Com o Brasil, as ameaças explícitas documentadas vieram quase todas dos EUA, de 2020 a 2026. Mas os EUA também fizeram propostas, e a China já usou punição econômica contra outros países.",["chapman","carta","pcc","lituania"]],
