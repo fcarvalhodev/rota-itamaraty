@@ -8,7 +8,7 @@
 <style>
 /* Layout: the Rotas skeleton (condensed Archivo, Source Serif, JetBrains Mono). Itamaraty's own colour is ipê magenta.
    EUA is always blue and on the left; China is always orange and on the right, so every comparison reads the same way.
-   Order: hero → numbers side by side → where each invests and in whom → how each negotiates since 2003 (shared timeline, by government) → threats × proposals → myths → verdict. */
+   Order: hero → numbers side by side → who owns strategic assets (state-owned buyers by country, and which government sold) → where each invests and in whom → how each negotiates since 2003 (shared timeline, by government) → threats × proposals → myths → verdict. */
 :root{
   --bg:#f2f0ee; --paper:#fbfaf9; --ink:#1c1b1f; --muted:#5e5d66; --line:#d9d5d1; --soft:#e9e6e2;
   --accent:#9b2c6b; --accent-soft:#f4e0ea;
@@ -121,6 +121,21 @@ section{padding-block:48px 8px;gap:18px}
 .dep .side b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--c);display:block}
 .dep .row .src{grid-column:1/-1}
 @media (min-width:720px){.dep .row{grid-template-columns:180px minmax(0,1fr) minmax(0,1fr);column-gap:16px}}
+.ownbox{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;gap:10px}
+.deals{display:grid;gap:12px}
+.deals .grp{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:4px;padding:14px 16px;display:grid;gap:10px}
+.deals .grp h3{font-size:20px}
+.deals .grp .who{font-size:15px;color:var(--muted)}
+.deals .deal{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;border-top:1px solid var(--line);padding-top:8px}
+.deals .deal .y{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.deals .deal .y b{color:var(--ink);font-weight:600}
+.deals .deal strong{font-family:var(--ui);font-size:16px}
+.deals .deal p{font-size:15px}
+.gov{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.gov div{background:var(--soft);border-radius:4px;padding:10px 12px;display:grid;gap:2px}
+.gov b{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:40px;line-height:1}
+.gov span{font-family:var(--ui);font-weight:700;font-size:15px}
+.gov small{font-family:var(--mono);font-size:11px;color:var(--muted)}
 .hb{display:grid;gap:6px}
 .hb .r{display:grid;grid-template-columns:8.5em minmax(0,1fr) 3.6em;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px}
 .hb .t{height:12px;background:var(--soft);border-radius:2px;position:relative}
@@ -189,14 +204,16 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
   <div class="pairs" id="pairs"></div>
 </section>
 
-<section aria-labelledby="h-col">
-  <h2 id="h-col">O Brasil é colônia?</h2>
-  <p class="sub">Colônia é um país que não decide o próprio governo, as próprias leis e a própria moeda. Dependência é outra coisa: precisar muito de alguém para vender, investir ou se financiar. Medimos as duas coisas, para os dois países.</p>
+<section aria-labelledby="h-dono">
+  <h2 id="h-dono">Quem é dono da infraestrutura estratégica</h2>
+  <p class="sub">Não é só a China. Empresas que pertencem a governos estrangeiros, ou que têm um governo como grande sócio, compraram usinas, linhas de transmissão, distribuidoras, gasodutos, refinaria, campos de petróleo e terminais de porto no Brasil. Na maioria das vezes, quem vendeu foi o próprio governo brasileiro, em leilão ou por venda da Petrobras e da Eletrobras.</p>
+  <div class="ownbox" id="rank"></div>
+  <div class="ownbox" id="porgov"></div>
+  <div id="deals" class="deals"></div>
+  <p class="sub">Os EUA não aparecem nesta lista porque não têm estatais desse tipo aqui: a presença americana vem de empresas privadas e, desde 2026, do financiamento da agência DFC. A lista traz os maiores negócios que encontramos com fonte, não todos. Antes disso, nos anos 1990, as privatizações já tinham levado distribuidoras a grupos estrangeiros, como a Eletropaulo em 1998.</p>
+  <h3 style="margin-top:8px">Onde o Brasil depende de cada um</h3>
+  <p class="sub">Dono de empresa é uma coisa. Dependência é outra: precisar muito de alguém para vender, investir, se financiar ou se defender.</p>
   <div class="dep" id="dep"></div>
-  <div class="answer">
-    <span class="tag no" style="justify-self:start">Falso</span>
-    <p><b>O Brasil não é colônia de nenhum dos dois.</b> Elege o próprio governo, faz as próprias leis, tem moeda própria e manteve o julgamento de Bolsonaro mesmo sob tarifa americana. O que existe é dependência, e de tipos diferentes: da China para vender, dos EUA para investimento, finanças e tecnologia.</p>
-  </div>
 </section>
 
 <section aria-labelledby="h-inv">
@@ -282,12 +299,12 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
 <section aria-labelledby="h-ver">
   <div class="verdict">
     <h2 id="h-ver">Veredito</h2>
-    <p><b>Nem colônia chinesa, nem parceria sem interesse.</b> O Brasil depende das duas potências de jeitos diferentes.</p>
+    <p><b>Nem dominação, nem parceria sem interesse.</b> O Brasil depende das duas potências de jeitos diferentes.</p>
     <ul>
       <li><b>China:</b> compra quase 30% do que o Brasil exporta e o Brasil tem superávit com ela. Investe sobretudo em energia e petróleo, na maior parte comprando empresas que já existiam. O risco é a concentração: quem compra tanto pesa no preço, como mostrou a cota da carne.</li>
       <li><b>EUA:</b> continuam sendo o maior investidor estrangeiro, com cerca de um quarto do estoque, em indústria, finanças e tecnologia. De 2020 a 2026, foram deles as ameaças explícitas com condição política.</li>
       <li><b>Retorno para o povo:</b> as empresas americanas empregam mais gente no Brasil e exportar para os EUA ocupa mais trabalhadores. O investimento chinês foi quase todo compra de empresas prontas até 2024, e só em 2025 virou obra nova, como as fábricas de carros. Nenhum dos dois divulga quanto lucro leva para fora.</li>
-      <li><b>Ativos estratégicos:</b> a China comprou minas e participações, sempre de vendedores privados. A lei de minerais críticos de setembro de 2026 é a primeira regra brasileira com controle sobre operações sensíveis, e chega depois das vendas.</li>
+      <li><b>Ativos estratégicos:</b> estatais chinesas aparecem em mais negócios de energia, petróleo e portos do que as de qualquer outro governo, mas Itália, França, Noruega, Emirados, Canadá e Singapura também estão no setor. Quase sempre quem vendeu foi o próprio governo brasileiro, com Dilma, Temer e Bolsonaro. Nas minas, a China comprou de vendedores privados. O Brasil não tem uma regra geral para compras de estatais estrangeiras em setores estratégicos; a lei de minerais críticos, de setembro de 2026, é a primeira com algum controle, e só para minérios.</li>
     </ul>
     <p>A pergunta útil não é qual potência é boa, e sim quanto o Brasil depende de cada uma e que regras ele tem para negociar com as duas.</p>
   </div>
@@ -305,6 +322,21 @@ const S={
   mdicUS:["DGABC: comércio com os EUA em 2025","https://www.dgabc.com.br/Noticia/4277972/com-tarifaco-de-trump-exportacoes-brasileiras-para-os-eua-cairam-6-6-em-2025"],
   mdicCN:["Monitor Mercantil: balança de 2025","https://monitormercantil.com.br/deficit-com-eua-cresce-e-reduz-saldo-da-balanca-comercial-em-2025/"],
   bcIED:["InfoMoney: dados do Banco Central","https://www.infomoney.com.br/?p=3041880"],
+  libra:["Jornal do Brasil: leilão de Libra","https://www.jb.com.br/economia/noticias/2013/10/21/amp/libra-consorcio-com-petrobras-shell-total-cnpc-e-cnooc-ganha-leilao.html"],
+  belo:["Tribuna PR: linhão de Belo Monte","https://www.tribunapr.com.br/noticias/economia/favorita-state-grid-vence-leilao-de-transmissao-de-belo-monte/"],
+  ctg:["Tribuna PR: CTG leva Jupiá e Ilha Solteira","https://www.tribunapr.com.br/noticias/economia/leilao-de-usinas-tem-chineses-e-estatais-estaduais-entre-os-vencedores/"],
+  nts:["Jornal do Brasil: Petrobras vende a NTS","https://www.jb.com.br/economia/noticias/2016/09/23/amp/petrobras-vende-por-us-52-bi-para-brookfield-90-de-seu-gasoduto.html"],
+  cemig:["Poder360: leilão das usinas da Cemig","https://www.poder360.com.br/economia/governo-arrecada-r-121-bilhoes-com-leilao-de-usinas-da-cemig/"],
+  buzios:["Forbes: CNOOC em Búzios","https://forbes.com.br/forbes-money/2021/09/petrobras-vende-fatia-de-5-em-buzios-por-us-208-bilhoes-a-chinesa-cnooc/"],
+  sts11:["Canal Rural: COFCO em Santos","https://www.canalrural.com.br/economia/gigante-chinesa-arremata-terminal-de-graos-no-porto-de-santos/"],
+  tag:["Forbes: Petrobras vende a TAG","https://forbes.com.br/last/2019/04/petrobras-vende-tag-por-us-86-bi/"],
+  engieState:["Enerdata: participação do Estado francês na Engie","https://www.enerdata.net/publications/daily-energy-news/french-state-has-divested-456-stake-engie.html"],
+  enel:["Poder360: Enel e o governo italiano","https://www.poder360.com.br/poder-energia/enel-e-italiana-e-tem-participacao-do-governo-italiano"],
+  celg:["Jornal Opção: Enel compra a Celg-D","https://www.jornalopcao.com.br/ultimas-noticias/empresa-italiana-arremata-leilao-da-celg-d-81239/"],
+  carcara:["World Oil: Statoil compra Carcará","https://worldoil.com/news/2016/7/29/statoil-buys-2-5-billion-stake-in-santos-basin-license-from-petrobras"],
+  equinor:["Equinor: acionistas","https://www.equinor.com/en/investors/our-shareholders.html"],
+  rlam:["Forbes: Petrobras vende a RLAM","https://forbes.com.br/forbes-money/2021/11/petrobras-conclui-venda-da-refinaria-rlam-ao-grupo-mubadala-capital/"],
+  mubadala:["Bloomberg Línea: Mubadala e Petrobras","https://www.bloomberglinea.com.br/negocios/petrobras-mira-acordo-com-mubadala-por-refinaria-no-primeiro-semestre/"],
   cpfl:["Exame: State Grid compra a CPFL","https://exame.com/negocios/state-grid-fecha-contrato-de-compra-da-cpfl-por-r-1419-bi"],
   eletr:["InvestNews: chineses no setor elétrico","https://investnews.com.br/negocios/como-o-setor-eletrico-brasileiro-se-tornou-o-destino-preferido-dos-investimentos-chineses/amp/"],
   sgtrans:["Forbes: State Grid e 10% da transmissão","https://forbes.com.br/forbes-money/2025/11/state-grid-compra-linha-de-transmissao-da-brookfield-por-r-7-bilhoes/"],
@@ -403,10 +435,48 @@ document.getElementById('inv-cn').insertAdjacentHTML('beforeend',
  asset(["2024–2025","Carros","BYD em Camaçari, onde o MPT resgatou 220 trabalhadores chineses e processou a empresa em R$ 257 milhões. GWM numa antiga fábrica da Mercedes em São Paulo, e Geely com 26,4% da Renault do Brasil.",["byd","cebcpdf"]]));
 
 
-// colony / dependence grid
+
+// who owns strategic assets: country, owner note, color, deals [year, government, asset, how, sources]
+const OWN=[
+ ["China","Estatais e fundo soberano do governo chinês","var(--cn)",[
+  ["2013","Dilma","10% de Libra para a CNPC e 10% para a CNOOC","Leilão do pré-sal, ao lado de Petrobras, Shell e Total.",["libra"]],
+  ["2015","Dilma","Segundo linhão de Belo Monte, 2.550 km, para a State Grid","Leilão de transmissão da Aneel.",["belo"]],
+  ["2015","Dilma","Usinas de Jupiá e Ilha Solteira, 4.995 MW, para a CTG","Leilão de usinas que eram da Cesp. Outorga de R$ 13,8 bilhões.",["ctg"]],
+  ["2016","Temer","Fatia na NTS, gasodutos do Sudeste, para o fundo soberano CIC","A Petrobras vendeu 90% da NTS por US$ 5,19 bilhões a um grupo liderado pela canadense Brookfield.",["nts"],"nts"],
+  ["2017","Temer","Controle da CPFL, cerca de 15% da distribuição de energia, para a State Grid","Venda entre empresas: Camargo Corrêa e fundos de pensão como Previ e Petros venderam 54,6% por R$ 14,2 bilhões.",["cpfl","eletr"]],
+  ["2017","Temer","90% do terminal de contêineres de Paranaguá para a China Merchants","Venda entre empresas, por R$ 2,9 bilhões. É o terceiro maior terminal de contêineres do país.",["tcp"]],
+  ["2017","Temer","Usina de São Simão para a SPIC","Leilão de usinas que eram da Cemig, por R$ 7,18 bilhões.",["cemig"],"cemig"],
+  ["2019","Bolsonaro","5% de Búzios para a CNODC e 5% para a CNOOC","Leilão da cessão onerosa do pré-sal, ao lado da Petrobras.",["buzios"]],
+  ["2021","Bolsonaro","Mais 5% de Búzios para a CNOOC","A Petrobras vendeu por US$ 2,08 bilhões.",["buzios"]],
+  ["2022","Bolsonaro","Terminal de grãos STS11, em Santos, para a COFCO","Leilão da autoridade portuária, por 25 anos.",["sts11"]],
+  ["2025","Lula 3","Linha de transmissão Mantiqueira, 1.204 km, para a State Grid","Venda entre empresas: a canadense Brookfield vendeu por cerca de R$ 7 bilhões.",["sgtrans"]]]],
+ ["Itália","Enel, que tem o governo italiano como maior acionista (23,6%)","var(--both)",[
+  ["2016","Temer","Celg-D, distribuidora de Goiás","A Eletrobras vendeu em leilão de privatização, por R$ 2,187 bilhões.",["celg","enel"]],
+  ["2017","Temer","Usina de Volta Grande","Leilão de usinas que eram da Cemig, por R$ 1,42 bilhão.",["cemig","enel"],"cemig"],
+  ["2018","Temer","Eletropaulo, distribuidora de São Paulo","Venda entre empresas: a americana AES vendeu por R$ 5,5 bilhões. A Eletropaulo tinha sido privatizada em 1998.",["enel"]]]],
+ ["França","Engie, que tem o Estado francês como sócio (cerca de 24%)","var(--both)",[
+  ["2017","Temer","Usinas de Jaguara e Miranda","Leilão de usinas que eram da Cemig, por R$ 3,53 bilhões.",["cemig","engieState"],"cemig"],
+  ["2019","Bolsonaro","TAG, gasodutos do Nordeste e do Norte","A Petrobras vendeu por US$ 8,6 bilhões à Engie e ao fundo público de Québec, do Canadá.",["tag","engieState"],"tag"]]],
+ ["Canadá","Fundos públicos de aposentadoria de Québec e da Colúmbia Britânica","var(--both)",[
+  ["2016","Temer","Fatia na NTS","Sócio do grupo da Brookfield na compra dos gasodutos da Petrobras.",["nts"],"nts"],
+  ["2019","Bolsonaro","Fatia na TAG","Sócio da Engie na compra dos gasodutos da Petrobras.",["tag"],"tag"]]],
+ ["Noruega","Equinor, 67% do governo norueguês","var(--both)",[
+  ["2016","Temer","66% do campo de Carcará, no pré-sal","A Petrobras vendeu por US$ 2,5 bilhões.",["carcara","equinor"]]]],
+ ["Emirados Árabes","Mubadala, fundo soberano de Abu Dhabi","var(--both)",[
+  ["2021","Bolsonaro","Refinaria RLAM, na Bahia, 14% do refino do país","A Petrobras vendeu por US$ 1,65 bilhão. Desde 2023 a Petrobras negocia voltar a ser sócia.",["rlam","mubadala"]]]],
+ ["Singapura","GIC, fundo soberano","var(--both)",[
+  ["2016","Temer","Fatia na NTS","Sócio do grupo da Brookfield na compra dos gasodutos da Petrobras.",["nts"],"nts"]]]
+];
+document.getElementById('rank').innerHTML=hb('Negócios listados, por país do governo dono',OWN.map(o=>[o[0],o[3].length,String(o[3].length)]),'var(--cn)')+'<p class="sum">A China lidera com folga: são 11 negócios, de usinas a portos. Os outros países têm de 1 a 3 cada.</p>';
+const seen=new Set(),GOV={"Dilma":0,"Temer":0,"Bolsonaro":0,"Lula 3":0};let PRIV=0;
+OWN.forEach(o=>o[3].forEach(d=>{const key=d[5]||d[2];if(seen.has(key))return;seen.add(key);if(/Venda entre empresas/.test(d[3]))PRIV++;else GOV[d[1]]++;}));
+document.getElementById('porgov').innerHTML=`<span class="cap" style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Quem vendeu ou leiloou</span><div class="gov">${Object.entries(GOV).map(([g,n])=>`<div><b>${n}</b><span>${g}</span><small>${n===1?'venda ou leilão':'vendas ou leilões'} do governo</small></div>`).join('')}<div><b>${PRIV}</b><span>Entre empresas</span><small>sem o governo vender</small></div></div><p class="sum">Contamos cada leilão ou venda uma vez, mesmo quando teve mais de um comprador estrangeiro. A maior parte das vendas de ativos da Petrobras e da Eletrobras para esses grupos aconteceu com Temer e Bolsonaro. No governo Lula 3, o negócio listado foi entre empresas.</p>`;
+document.getElementById('deals').innerHTML=OWN.map(o=>`<div class="grp" style="--c:${o[2]}"><h3>${o[0]}</h3><span class="who">${o[1]}</span>${o[3].map(d=>`<div class="deal"><span class="y"><b>${d[0]}</b> · governo ${d[1]}</span><strong>${d[2]}</strong><p>${d[3]}</p>${srcs(d[4])}</div>`).join('')}</div>`).join('');
+
+// dependence grid
 const depRow=r=>`<div class="row"><span class="area">${r[0]}<small>${r[1]}</small></span><div class="side" style="--c:var(--us)"><b>EUA</b>${r[2]}</div><div class="side" style="--c:var(--cn)"><b>China</b>${r[3]}</div>${srcs(r[4])}</div>`;
 const DEP=[
- ["Governo e leis","colônia?","Pressionou com tarifa citando o julgamento de Bolsonaro. O julgamento seguiu e a tarifa foi negociada.","Nenhuma exigência pública sobre leis ou governo brasileiro.",["carta","retira40"]],
+ ["Governo e leis","pressão política","Pressionou com tarifa citando o julgamento de Bolsonaro. O julgamento seguiu e a tarifa foi negociada.","Nenhuma exigência pública sobre leis ou governo brasileiro.",["carta","retira40"]],
  ["Comércio","dependência","Compra 10,8% das exportações. O Brasil tem déficit com os EUA.","Compra 28,7% das exportações, quase três vezes mais. O Brasil tem superávit com a China.",["mdicUS","mdicCN"]],
  ["Investimento","dependência","26% de todo o investimento estrangeiro no Brasil, o maior de todos.","Fatia pequena do total, mas concentrada em energia elétrica (43,6%) e petróleo.",["bcIED","cebcpdf"]],
  ["Finanças e dólar","dependência","Quando os EUA sancionaram Moraes, um banco brasileiro bloqueou o cartão internacional dele. Quem usa o sistema financeiro americano sente a sanção.","O Brasil anunciou títulos em yuan em 2026, ainda pequenos perto da dívida em dólar.",["magnbank","yuan"]],
@@ -433,9 +503,13 @@ const T=[
  ["era","Dilma · 2011–2016"],
  ["us","set 2013","atrito","Espionagem da NSA","Documentos vazados por Snowden mostram que a NSA espionou Dilma. Ela cancela a visita de Estado a Washington.",["nsa"]],
  ["br","jul 2014","decisão","BRICS criam o seu banco","Na cúpula de Fortaleza, os cinco países criam o Novo Banco de Desenvolvimento.",["ndb"]],
+ ["cn","2015","compra","Leilões levam usinas e linhão para chinesas","A CTG fica com Jupiá e Ilha Solteira, e a State Grid com o segundo linhão de Belo Monte, de 2.550 km.",["ctg","belo"]],
+ ["era","Temer · 2016–2018"],
+ ["cn","jan–set 2017","compra","State Grid compra a CPFL; China Merchants, o porto de Paranaguá","A CPFL é comprada de empresas e fundos de pensão, e o terminal de Paranaguá, de sócios privados. Em setembro, a SPIC também leva a usina de São Simão em leilão do governo.",["cpfl","tcp","cemig"]],
  ["era","Bolsonaro · 2019–2022"],
  ["us","mar–jul 2019","acordo","OCDE, OMC e aliado extra-OTAN","Bolsonaro abre mão do tratamento especial na OMC em troca do apoio americano à OCDE e de trigo sem tarifa. Em julho, os EUA dão ao Brasil o status de aliado preferencial fora da OTAN.",["ocde","otan"]],
  ["cn","out 2019","proposta","Bolsonaro vai a Pequim","Depois de criticar a China na campanha, Bolsonaro visita Xi Jinping para ampliar o comércio.",["bolsochina"]],
+ ["cn","nov 2019","compra","Estatais chinesas entram em Búzios","No leilão da cessão onerosa, CNODC e CNOOC ficam com 5% cada, ao lado da Petrobras.",["buzios"]],
  ["cn","mar 2020","atrito","Eduardo culpa a China pela covid","O embaixador chinês chama a fala de “insulto maléfico” e cobra desculpas. O chanceler Ernesto Araújo cobra retratação do embaixador.",["eduardo"]],
  ["us","jun–jul 2020","pressão e oferta","5G sem a Huawei","Os EUA discutem um fundo para financiar equipamentos da Ericsson e da Nokia. Semanas depois, o embaixador diz que haverá “consequências” se a Huawei entrar.",["fundo5g","chapman"]],
  ["cn","mai 2021","atrito","Atraso nos insumos da CoronaVac","O Butantan liga o atraso às declarações de Bolsonaro; a embaixada nega e o ministro da Saúde diz que o problema é contratual.",["ifa","queiroga"]],
@@ -448,6 +522,7 @@ const T=[
  ["us","jul 2025","ameaça","Tarifa extra a quem se alinhar ao BRICS","Trump faz a ameaça enquanto os líderes do BRICS se reúnem no Rio.",["brics25"]],
  ["us","jul 2025","ameaça","Carta e tarifa de 50%","Trump cita o julgamento de Bolsonaro e abre investigação pela Seção 301, que inclui o Pix. A tarifa vale desde 6 de agosto.",["carta","tarifa"]],
  ["us","jul 2025","sanção","Lei Magnitsky contra Moraes","O Tesouro americano sanciona o ministro do STF e a esposa.",["magn"]],
+ ["cn","nov 2025","compra","State Grid compra a linha Mantiqueira","Paga cerca de R$ 7 bilhões à canadense Brookfield e passa a operar perto de 10% da rede de alta tensão.",["sgtrans"]],
  ["us","nov–dez 2025","recuo","Carne e café saem da tarifa; Moraes sai da lista","Depois de negociação, os EUA retiram a tarifa extra de 40% de produtos agrícolas e, em dezembro, tiram Moraes da lista Magnitsky.",["retira40","magn"]],
  ["cn","dez 2025","defesa comercial","Salvaguarda da carne para todos","A China cria cotas por país por três anos, com 55% a mais acima da cota. Vale para Brasil, Argentina, Austrália, EUA e outros.",["salva"]],
  ["us","jan 2026","militar","Captura de Maduro","Operação militar americana na Venezuela leva Maduro para os EUA. O governo brasileiro condena.",["maduro"]],
