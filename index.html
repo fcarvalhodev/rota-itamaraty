@@ -2,13 +2,13 @@
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Rota Itamaraty</title>
-<meta name="description" content="O Brasil entre Washington e Pequim: comércio, investimento, quem é dono de quê e como cada potência negocia com o Brasil, com o mesmo critério para os dois.">
+<meta name="description" content="Como o Brasil negocia com os EUA e com a China desde 2003: comércio, onde cada um investe e em quem, e quando veio proposta ou ameaça. Com o mesmo critério para os dois.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
 /* Layout: the Rotas skeleton (condensed Archivo, Source Serif, JetBrains Mono). Itamaraty's own colour is ipê magenta.
    EUA is always blue and on the left; China is always orange and on the right, so every comparison reads the same way.
-   Order: hero → numbers side by side → what each owns here → how each negotiates (shared timeline) → "arma ou proposta?" → the posts checked → myths → verdict. */
+   Order: hero → numbers side by side → where each invests and in whom → how each negotiates since 2003 (shared timeline, by government) → threats × proposals → myths → verdict. */
 :root{
   --bg:#f2f0ee; --paper:#fbfaf9; --ink:#1c1b1f; --muted:#5e5d66; --line:#d9d5d1; --soft:#e9e6e2;
   --accent:#9b2c6b; --accent-soft:#f4e0ea;
@@ -108,6 +108,17 @@ section{padding-block:48px 8px;gap:18px}
 .ev p{font-size:14.5px;color:var(--muted)}
 .ev .kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
 .ev[hidden]{display:none}
+.era{list-style:none;position:relative;z-index:1;text-align:center;padding-block:22px 6px}
+.era span{display:inline-block;background:var(--bg);padding:2px 12px;font-family:var(--display);font-stretch:66%;font-weight:800;font-size:22px;text-transform:uppercase}
+.era[hidden]{display:none}
+.col .sum{font-size:15.5px}
+.hb{display:grid;gap:6px}
+.hb .r{display:grid;grid-template-columns:8.5em minmax(0,1fr) 3.6em;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px}
+.hb .t{height:12px;background:var(--soft);border-radius:2px;position:relative}
+.hb .f{position:absolute;inset:0 auto 0 0;background:var(--c);border-radius:2px}
+.hb .r b{text-align:right;font-weight:600}
+.hb .cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:640px){.era{text-align:left;padding-left:22px}}
 @media (max-width:640px){
   .tl::before{left:7px}
   .ev{grid-template-columns:28px minmax(0,1fr)}
@@ -150,9 +161,9 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
 
 <style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/" aria-current="page">Itamaraty</a></div></nav>
 <header class="wrap">
-  <div class="kicker">Rota Itamaraty · O Brasil entre Washington e Pequim</div>
+  <div class="kicker">Rota Itamaraty · O Brasil entre Washington e Pequim, 2003–2026</div>
   <h1>Itamaraty</h1>
-  <p class="lede">Um lado diz que a China está colonizando o Brasil sem disparar um tiro. O outro diz que os EUA negociam com arma e a China com proposta. Aqui estão os números, os negócios e as pressões dos dois, medidos com a mesma régua.</p>
+  <p class="lede">Como o Brasil negocia com os EUA e com a China desde o primeiro governo Lula: o que cada um compra, onde investe e em quem, e quando a conversa veio com proposta ou com ameaça. Os dois lados medidos com a mesma régua.</p>
   <div class="duo" aria-hidden="true">
     <div class="side us"><span class="mono">Washington</span><b>EUA</b></div>
     <div class="mid"><i></i>Brasília</div>
@@ -169,18 +180,18 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
   <div class="pairs" id="pairs"></div>
 </section>
 
-<section aria-labelledby="h-dono">
-  <h2 id="h-dono">Quem é dono de quê</h2>
-  <p class="sub">Os negócios mais citados nos posts e no debate. Repare quem vendeu: nas três minas, o vendedor foi uma empresa privada estrangeira ou a própria dona brasileira, não o governo.</p>
+<section aria-labelledby="h-inv">
+  <h2 id="h-inv">Onde cada um investe, e em quem</h2>
+  <p class="sub">Investir pode ser construir algo novo ou comprar uma empresa que já existe. Isso muda para onde vai o dinheiro e quem fica com o lucro.</p>
   <div class="cols">
-    <div class="col" style="--c:var(--us)" id="col-us"><h3>EUA</h3></div>
-    <div class="col" style="--c:var(--cn)" id="col-cn"><h3>China</h3></div>
+    <div class="col" style="--c:var(--us)" id="inv-us"><h3>EUA</h3></div>
+    <div class="col" style="--c:var(--cn)" id="inv-cn"><h3>China</h3></div>
   </div>
 </section>
 
 <section aria-labelledby="h-neg">
   <h2 id="h-neg">Como cada um negocia</h2>
-  <p class="sub">A mesma linha do tempo para os dois. À esquerda o que veio de Washington, à direita o que veio de Pequim, no meio as decisões do Brasil.</p>
+  <p class="sub">De Lula 1 até hoje, a mesma linha do tempo para os dois. À esquerda o que veio de Washington, à direita o que veio de Pequim, no meio as decisões do Brasil.</p>
   <div class="chips" role="group" aria-label="Filtrar">
     <button class="chip" type="button" data-f="all" aria-pressed="true">Tudo</button>
     <button class="chip" type="button" data-f="us" aria-pressed="false" style="--c:var(--us)"><i aria-hidden="true"></i>EUA</button>
@@ -191,52 +202,53 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
 </section>
 
 <section aria-labelledby="h-arma">
-  <h2 id="h-arma">“Os EUA negociam com arma, a China com proposta”</h2>
-  <p class="sub">A frase circula muito. Separamos o que cada um fez com o Brasil e o que fez com outros países.</p>
+  <h2 id="h-arma">“Os EUA negociam com ameaça, a China com proposta”</h2>
+  <p class="sub">Nas redes a frase aparece como “os EUA negociam com arma”, no sentido de ameaça. Listamos as ameaças e as propostas de cada um ao Brasil desde 2003.</p>
   <div class="split">
     <div class="box us">
       <h3>EUA</h3>
-      <span class="lbl">Com o Brasil</span>
+      <span class="lbl">Ameaças e punições</span>
       <ul>
-        <li>Tarifa de 50% em 2025, com carta que citava o julgamento de Bolsonaro. Pressão econômica com exigência política explícita.</li>
-        <li>Sanção da Lei Magnitsky contra um ministro do STF, retirada em dezembro de 2025.</li>
-        <li>Depois que a Suprema Corte americana derrubou a tarifa, nova tarifa de 25% pela Seção 301, que cita até o Pix.</li>
-        <li>Também oferta: financiamento de US$ 565 milhões para terras raras em Goiás, com opção de o governo americano virar sócio.</li>
+        <li><b>2020:</b> o embaixador diz que o Brasil terá “consequências” se deixar a Huawei entrar no 5G.</li>
+        <li><b>2025:</b> Trump ameaça tarifa extra a quem se alinhar ao BRICS, durante a cúpula no Rio.</li>
+        <li><b>2025:</b> tarifa de 50% com carta que cita o julgamento de Bolsonaro, e sanção Magnitsky contra Moraes.</li>
+        <li><b>2026:</b> CV e PCC classificados como terroristas, contra o pedido de Lula, que temia sanções a bancos e ação militar.</li>
+        <li><b>2026:</b> nova tarifa de 25% e sobretaxa de 12,5%, citando até o Pix.</li>
       </ul>
-      <span class="lbl">Fora do Brasil</span>
+      <span class="lbl">Propostas e acordos</span>
       <ul>
-        <li>Operação militar na Venezuela e captura de Maduro em janeiro de 2026. O Brasil condenou.</li>
-        <li>Na história, apoio ao golpe de 1964 com a Operação Brother Sam, documentado em arquivos americanos.</li>
+        <li><b>2009–2014:</b> depois de perder para o Brasil na OMC no caso do algodão, os EUA pagam US$ 147 milhões por ano e mais US$ 300 milhões no acordo final.</li>
+        <li><b>2019:</b> apoio à entrada na OCDE, em troca de o Brasil abrir mão de tratamento especial na OMC, e status de aliado extra-OTAN.</li>
+        <li><b>2020:</b> fundo para financiar 5G da Ericsson e da Nokia, no lugar da Huawei.</li>
+        <li><b>2025–2026:</b> recuo nas tarifas de carne e café depois de negociação, e US$ 565 milhões para terras raras.</li>
       </ul>
     </div>
     <div class="box cn">
       <h3>China</h3>
-      <span class="lbl">Com o Brasil</span>
+      <span class="lbl">Ameaças e punições</span>
       <ul>
-        <li>Nenhuma exigência política pública ligada ao comércio.</li>
-        <li>Salvaguarda da carne com cota e sobretaxa de 55%, aplicada a todos os exportadores, inclusive EUA e Austrália.</li>
-        <li>Investimento crescente: o Brasil foi o maior destino de investimento chinês no mundo em 2025.</li>
-        <li>Problemas também: 220 trabalhadores chineses em condição análoga à escravidão na obra da BYD, em Camaçari.</li>
+        <li><b>2020:</b> o embaixador chama a fala de Eduardo Bolsonaro de “insulto maléfico” e cobra desculpas.</li>
+        <li><b>2021:</b> atraso nos insumos da CoronaVac. O Butantan ligou o atraso aos ataques de Bolsonaro; a embaixada negou e o Ministério da Saúde disse que era questão de contrato. Nunca foi comprovado como retaliação.</li>
+        <li><b>2025–2026:</b> salvaguarda da carne com cota e sobretaxa, aplicada a todos os grandes exportadores.</li>
+        <li><b>Fora do Brasil:</b> punição econômica à Austrália e à Lituânia depois de divergências políticas.</li>
       </ul>
-      <span class="lbl">Fora do Brasil</span>
+      <span class="lbl">Propostas e acordos</span>
       <ul>
-        <li>Coerção econômica contra a Austrália (cevada, vinho) e a Lituânia, depois de divergências políticas.</li>
-        <li>Pressão militar no Mar do Sul da China e em torno de Taiwan.</li>
+        <li><b>2004:</b> dez acordos e promessa de US$ 10 bilhões em investimentos quando o Brasil reconhece a China como economia de mercado.</li>
+        <li><b>2014:</b> Novo Banco de Desenvolvimento, criado pelos BRICS em Fortaleza.</li>
+        <li><b>2023 e 2024:</b> 15 acordos na visita de Lula a Pequim e 37 na visita de Xi a Brasília.</li>
+        <li><b>2025:</b> R$ 27 bilhões em anúncios e o Brasil como maior destino do investimento chinês no mundo.</li>
       </ul>
     </div>
   </div>
   <div class="answer">
-    <span class="tag part" style="justify-self:start">Em parte</span>
-    <p><b>Com o Brasil, nenhum dos dois usou arma.</b> Os EUA usaram tarifa e sanção atreladas a exigências políticas, o que está documentado. A China usou compra, investimento e defesa comercial, sem exigência política pública. Mas a China também já puniu outros países economicamente por razões políticas, e os EUA também fazem propostas. A diferença real com o Brasil, até aqui, é que a pressão americana veio com condição política explícita e a chinesa não.</p>
-    <span class="src"><a href="https://www.poder360.com.br/poder-internacional/leia-a-integra-da-carta-de-trump-a-lula-impondo-tarifa-de-50/" target="_blank" rel="noopener">Carta de Trump</a><a href="https://www.csis.org/analysis/chinas-economic-coercion-lessons-lithuania" target="_blank" rel="noopener">CSIS: Lituânia</a><a href="https://www.internationalaffairs.org.au/australianoutlook/hidden-lessons-from-chinas-coercion-campaign-against-australia" target="_blank" rel="noopener">AIIA: Austrália</a><a href="https://istoe.com.br/o-que-foi-a-operacao-brother-sam-apoio-dos-eua-ao-golpe-de-64" target="_blank" rel="noopener">IstoÉ: Brother Sam</a></span>
+    <span class="tag part" style="justify-self:start">Em grande parte</span>
+    <p><b>Com o Brasil, as ameaças explícitas documentadas vieram quase todas de Washington</b>, várias com exigência política, de 2020 a 2026. As da China foram uma reação verbal dura e um episódio de vacinas que nunca foi comprovado como retaliação.</p>
+    <p>As duas metades da frase têm ressalvas. Os EUA também fazem propostas e pagaram quando perderam na OMC. A China já puniu outros países economicamente e usa o peso de maior compradora, como mostrou a cota da carne. Fora do Brasil, os EUA agiram militarmente na Venezuela em 2026 e apoiaram o golpe de 1964 com a Operação Brother Sam.</p>
+    <span class="src"><a href="https://olhardigital.com.br/noticia/embaixador-dos-eua-diz-que-brasil-tera-consequencias-se-permitir-huawei-no-5g/104348" target="_blank" rel="noopener">Olhar Digital: “consequências”</a><a href="https://www.jb.com.br/mundo/2025/07/1056101-trump-ameaca-tarifas-extras-de-10-sobre-os-brics-enquanto-lideres-se-reunem-no-brasil.html" target="_blank" rel="noopener">JB: ameaça ao BRICS</a><a href="https://www.infomoney.com.br/mundo/eua-classificam-comando-vermelho-e-pcc-como-organizacoes-terroristas-globais/" target="_blank" rel="noopener">InfoMoney: CV e PCC</a><a href="https://www.poder360.com.br/governo/ernesto-cobra-retratacao-de-embaixador-chines-por-resposta-a-eduardo-bolsonaro/" target="_blank" rel="noopener">Poder360: embaixador chinês</a><a href="https://www.metropoles.com/brasil/butantan-diz-que-ataques-de-bolsonaro-a-china-afetam-envio-de-insumos" target="_blank" rel="noopener">Metrópoles: insumos</a><a href="https://www.moneytimes.com.br/queiroga-diz-que-problema-de-ifa-para-butantan-e-contratual-e-nao-diplomatico/" target="_blank" rel="noopener">Money Times: Queiroga</a><a href="https://www.csis.org/analysis/chinas-economic-coercion-lessons-lithuania" target="_blank" rel="noopener">CSIS: Lituânia</a><a href="https://istoe.com.br/o-que-foi-a-operacao-brother-sam-apoio-dos-eua-ao-golpe-de-64" target="_blank" rel="noopener">IstoÉ: Brother Sam</a></span>
   </div>
 </section>
 
-<section aria-labelledby="h-posts">
-  <h2 id="h-posts">Os posts que circulam, checados</h2>
-  <p class="sub">Frases de posts sobre carne, nióbio, aço e dívida que viralizaram em setembro e outubro de 2026.</p>
-  <div class="myths" id="posts"></div>
-</section>
 
 <section aria-labelledby="h-mitos">
   <h2 id="h-mitos">O que circula × o que consta</h2>
@@ -249,8 +261,8 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
     <h2 id="h-ver">Veredito</h2>
     <p><b>Nem colônia chinesa, nem parceria sem interesse.</b> O Brasil depende das duas potências de jeitos diferentes.</p>
     <ul>
-      <li><b>China:</b> compra quase 30% do que o Brasil exporta e o Brasil tem superávit com ela. O risco é a concentração: quem compra tanto pesa no preço, como mostrou a cota da carne.</li>
-      <li><b>EUA:</b> continuam sendo o maior investidor estrangeiro no Brasil, com cerca de um quarto do estoque. Foi deles a pressão com condição política explícita em 2025.</li>
+      <li><b>China:</b> compra quase 30% do que o Brasil exporta e o Brasil tem superávit com ela. Investe sobretudo em energia e petróleo, na maior parte comprando empresas que já existiam. O risco é a concentração: quem compra tanto pesa no preço, como mostrou a cota da carne.</li>
+      <li><b>EUA:</b> continuam sendo o maior investidor estrangeiro, com cerca de um quarto do estoque, em indústria, finanças e tecnologia. De 2020 a 2026, foram deles as ameaças explícitas com condição política.</li>
       <li><b>Ativos estratégicos:</b> a China comprou minas e participações, sempre de vendedores privados. A lei de minerais críticos de setembro de 2026 é a primeira regra brasileira com controle sobre operações sensíveis, e chega depois das vendas.</li>
     </ul>
     <p>A pergunta útil não é qual potência é boa, e sim quanto o Brasil depende de cada uma e que regras ele tem para negociar com as duas.</p>
@@ -295,7 +307,28 @@ const S={
   aco:["Jornal de Brasília: dados do Aço Brasil","https://jornaldebrasilia.com.br/noticias/economia/industria-do-aco-no-brasil-reduz-mais-de-5-000-empregos-ate-novembro-e-culpa-importacao-chinesa/"],
   lituania:["CSIS: Lituânia","https://www.csis.org/analysis/chinas-economic-coercion-lessons-lithuania"],
   australia:["AIIA: Austrália","https://www.internationalaffairs.org.au/australianoutlook/hidden-lessons-from-chinas-coercion-campaign-against-australia"],
-  brother:["IstoÉ: Operação Brother Sam","https://istoe.com.br/o-que-foi-a-operacao-brother-sam-apoio-dos-eua-ao-golpe-de-64"]
+  brother:["IstoÉ: Operação Brother Sam","https://istoe.com.br/o-que-foi-a-operacao-brother-sam-apoio-dos-eua-ao-golpe-de-64"],
+  cni:["Gazeta do Povo: dados da CNI","https://www.gazetadopovo.com.br/economia/investimento-americano-brasil-crescimento-recorde/"],
+  cebcpdf:["CEBC: Investimentos chineses 2025","https://static.poder360.com.br/2026/05/Investimentos-Chineses-no-Brasil-2025-CEBC-7mai2026.pdf"],
+  pcc:["InfoMoney: CV e PCC","https://www.infomoney.com.br/mundo/eua-classificam-comando-vermelho-e-pcc-como-organizacoes-terroristas-globais/"],
+  algodao:["Gazeta do Povo: algodão","https://www.gazetadopovo.com.br/economia/eua-pagarao-us-300-mi-para-encerrar-disputa-com-o-brasil-sobre-algodao-eebus4j3sfb9bciw7eo6q9hla/"],
+  nsa:["Estado de Minas: Dilma cancela viagem","https://www.em.com.br/app/noticia/politica/2013/09/17/interna_politica,449964/dilma-cancela-viagem-aos-eua.shtml"],
+  ocde:["Agência Brasil: OMC e OCDE","https://agenciabrasil.ebc.com.br/internacional/noticia/2019-03/brasil-abrira-mao-de-direitos-na-omc-para-ingressar-na-ocde"],
+  otan:["Poder360: aliado extra-OTAN","https://www.poder360.com.br/internacional/eua-designam-oficialmente-brasil-como-aliado-extra-otan-dw/"],
+  bolsochina:["Bloomberg: Bolsonaro em Pequim","https://www.bloomberg.com/news/articles/2019-10-25/bolsonaro-to-meet-china-s-xi-in-bid-to-balance-ties-with-u-s"],
+  eduardo:["Poder360: embaixador chinês","https://www.poder360.com.br/governo/ernesto-cobra-retratacao-de-embaixador-chines-por-resposta-a-eduardo-bolsonaro/"],
+  chapman:["Olhar Digital: “consequências”","https://olhardigital.com.br/noticia/embaixador-dos-eua-diz-que-brasil-tera-consequencias-se-permitir-huawei-no-5g/104348"],
+  fundo5g:["Olhar Digital: fundo para o 5G","https://olhardigital.com.br/noticia/eua-discutem-fundo-para-a-infraestrutura-do-5g-no-brasil/102129"],
+  ifa:["Metrópoles: insumos da CoronaVac","https://www.metropoles.com/brasil/butantan-diz-que-ataques-de-bolsonaro-a-china-afetam-envio-de-insumos"],
+  queiroga:["Money Times: Queiroga","https://www.moneytimes.com.br/queiroga-diz-que-problema-de-ifa-para-butantan-e-contratual-e-nao-diplomatico/"],
+  leilao5g:["Teletime: leilão do 5G","https://teletime.com.br/22/12/2021/retrospectiva-2021-o-ano-bilionario-do-leilao-5g-e-da-consolidacao-em-telecom/"],
+  lula23:["IstoÉ: 15 acordos","https://istoe.com.br/lula-e-xi-jinping-assinam-15-acordos-bilaterais"],
+  brics09:["Agência Brasil: BRICS","https://agenciabrasil.ebc.com.br/economia/noticia/2019-11/brics-fomenta-cooperacao-entre-economias-emergentes-ha-13-anos"],
+  ndb:["Decreto 8.624/2015 (NDB)","https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8624.htm"],
+  alca:["IHU: o fim da ALCA","https://ihu.unisinos.br/noticias/525411-ha-oito-anos-a-alca-era-enterrada-artigo-de-atilio-a-boron"],
+  econ04:["IPS (2004)","https://www.ipsnews.net/?p=13020"],
+  parc09:["Gazeta do Povo (2010)","https://www.gazetadopovo.com.br/economia/china-foi-o-principal-parceiro-comercial-do-brasil-em-2009-9pnr7xm4zm5ws7slattbwm2q6"],
+  brics25:["JB: ameaça ao BRICS","https://www.jb.com.br/mundo/2025/07/1056101-trump-ameaca-tarifas-extras-de-10-sobre-os-brics-enquanto-lideres-se-reunem-no-brasil.html"]
 };
 const L=k=>`<a href="${S[k][1]}" target="_blank" rel="noopener">${S[k][0]}</a>`;
 const srcs=a=>`<span class="src">${a.map(L).join('')}</span>`;
@@ -318,70 +351,77 @@ const tot=348.7,cn=100.0,us=37.7;
 h+=`<div class="pair share"><h3>Para onde vai o que o Brasil exporta (2025)</h3><div class="strip" role="img" aria-label="China 28,7%, EUA 10,8%, resto do mundo 60,5%"><span style="width:${cn/tot*100}%;background:var(--cn)"></span><span style="width:${us/tot*100}%;background:var(--us)"></span></div><div class="lab"><span>China 28,7%</span><span>EUA 10,8%</span><span>Resto do mundo 60,5%</span></div><p class="note">Exportação total de US$ 348,7 bilhões. Percentuais calculados a partir dos dados do governo.</p>${srcs(["mdicCN","mdicUS"])}</div>`;
 document.getElementById('pairs').innerHTML=h;
 
-// assets
-const US=[
- ["2024","Maior investidor estrangeiro","US$ 232,8 bilhões em estoque pelo país controlador, 26% do total. Bem à frente da França, segunda colocada, com 8%.",["bcIED"]],
- ["2026","Terras raras em Goiás","A agência americana DFC financia US$ 565 milhões da Serra Verde, única produtora brasileira em estágio avançado. O contrato prevê a opção de o governo americano comprar uma participação minoritária. Os termos completos são confidenciais.",["serra"]]
-];
-const CN=[
- ["2011","15% da CBMM (nióbio, Araxá)","Consórcio de estatais e siderúrgicas chinesas paga US$ 1,95 bilhão. Seis meses antes, japoneses e coreanos tinham comprado outros 15%. O controle continua com a família Moreira Salles.",["cbmm"]],
- ["2016","Nióbio e fosfatos em Goiás e São Paulo","A CMOC compra as operações da Anglo American, que vendeu por cerca de US$ 1,5 bilhão.",["cmoc"]],
- ["2024","Mineração Taboca (Amazonas)","A estatal CNMC compra a Taboca, de estanho, nióbio e tântalo, da peruana Minsur, por US$ 340 milhões.",["taboca"]],
- ["2024–2025","Energia elétrica e carros","Energia foi 34% do investimento chinês em 2024, boa parte em eólica e solar. A BYD montou fábrica em Camaçari, onde o MPT resgatou 220 trabalhadores chineses e processou a empresa em R$ 257 milhões.",["cebc24","byd"]],
- ["2025","Maior destino chinês no mundo","O Brasil recebeu US$ 6,1 bilhões, mais que qualquer outro país, segundo o CEBC.",["cebc25"]]
-];
+// where each invests
+const hb=(cap,rows,c,unit)=>{const m=Math.max(...rows.map(r=>r[1]));return `<div class="hb"><span class="cap">${cap}</span>${rows.map(r=>`<div class="r"><span>${r[0]}</span><span class="t"><span class="f" style="--c:${c};width:${r[1]/m*100}%"></span></span><b>${r[2]||r[1].toLocaleString('pt-BR')}</b></div>`).join('')}</div>`};
 const asset=a=>`<div class="asset"><span class="y">${a[0]}</span><b>${a[1]}</b><p>${a[2]}</p>${srcs(a[3])}</div>`;
-document.getElementById('col-us').insertAdjacentHTML('beforeend',US.map(asset).join(''));
-document.getElementById('col-cn').insertAdjacentHTML('beforeend',CN.map(asset).join(''));
+document.getElementById('inv-us').insertAdjacentHTML('beforeend',
+ `<p class="sum">US$ 232,8 bilhões em estoque, 26% do total, pelo critério do Banco Central. A CNI, com outro método, chega a US$ 357,8 bilhões. São cerca de 3.700 empresas, concentradas em indústria, serviços financeiros e tecnologia.</p>`+
+ hb('Maiores anúncios, 2020–2024 (US$ bi)',[["Bravo Motor (baterias, BA)",4.36,"4,36"],["Microsoft",3.03,"3,03"],["CloudHQ (data centers)",3.00,"3,00"],["Amazon (nuvem)",2.84,"2,84"],["New Fortress (gás)",1.26,"1,26"],["ICM (etanol)",1.22,"1,22"],["Atlas (energia)",1.09,"1,09"]],'var(--us)')+
+ `<p class="sum"><b>Para quem:</b> a maior parte do dinheiro novo vai para nuvem e data centers das próprias empresas, que vendem esse serviço no Brasil. Anúncio não é investimento feito: a fábrica de baterias da Bravo, o maior deles, ainda é projeto.</p>`+srcs(["bcIED","cni"])+
+ asset(["2026","Terras raras em Goiás","A agência americana DFC financia US$ 565 milhões da Serra Verde, com opção de o governo americano virar sócio minoritário.",["serra"]]));
+document.getElementById('inv-cn').insertAdjacentHTML('beforeend',
+ `<p class="sum">US$ 85,5 bilhões em 355 projetos de 2007 a 2025, pelo levantamento do CEBC. 63% desse valor foi compra de empresas que já existiam.</p>`+
+ hb('Estoque por setor, 2007–2025 (%)',[["Energia elétrica",43.6,"43,6"],["Petróleo",28.3,"28,3"],["Indústria",8.5,"8,5"],["Mineração",8.1,"8,1"],["Infraestrutura",4.0,"4,0"],["Agro",3.1,"3,1"],["Outros",4.4,"4,4"]],'var(--cn)')+
+ `<p class="sum"><b>Para quem:</b> na energia, a State Grid controla a CPFL desde 2017 e a CTG opera hidrelétricas como Ilha Solteira, ou seja, recebe parte da conta de luz. No petróleo, CNOOC e CNPC entram em blocos do pré-sal e da Foz do Amazonas, este último junto com a americana Chevron. Em 2025 a maior parte já foi obra nova: fábricas da BYD e da GWM e projetos de energia.</p>`+srcs(["cebcpdf","cebc25"])+
+ asset(["2011–2025","Minas","15% da CBMM (2011, sem controle), nióbio e fosfatos da Anglo American pela CMOC (2016), Taboca (2024), níquel da Anglo pela MMG e ouro da Equinox pela CMOC (2025).",["cbmm","cmoc","taboca","cebcpdf"]])+
+ asset(["2024–2025","Carros","BYD em Camaçari, onde o MPT resgatou 220 trabalhadores chineses e processou a empresa em R$ 257 milhões. GWM numa antiga fábrica da Mercedes em São Paulo, e Geely com 26,4% da Renault do Brasil.",["byd","cebcpdf"]]));
 
 // timeline: side, date, kind, title, text, sources
 const T=[
+ ["era","Lula 1 e 2 · 2003–2010"],
+ ["br","2003–2005","decisão","Brasil trava a ALCA","Brasil e Argentina resistem à área de livre comércio proposta pelos EUA, que é enterrada na Cúpula de Mar del Plata, em 2005.",["alca"]],
+ ["cn","nov 2004","proposta","Economia de mercado em troca de acordos","Lula reconhece a China como economia de mercado. A China assina dez acordos, promete US$ 10 bilhões em investimentos e abre mercado para carne e frango.",["econ04"]],
+ ["br","jun 2009","decisão","Primeira cúpula do BRIC","Brasil, Rússia, Índia e China fazem a primeira cúpula de chefes de Estado, em Ecaterimburgo.",["brics09"]],
+ ["cn","2009","comércio","China vira a maior parceira","Pela primeira vez a China passa os EUA no comércio com o Brasil: US$ 36,1 bilhões contra US$ 35,9 bilhões.",["parc09"]],
+ ["us","2009–2014","disputa","Brasil vence o caso do algodão","A OMC autoriza o Brasil a retaliar os EUA em até US$ 829 milhões. Os EUA passam a pagar US$ 147 milhões por ano e, em 2014, mais US$ 300 milhões para encerrar o caso.",["algodao"]],
+ ["era","Dilma · 2011–2016"],
+ ["us","set 2013","atrito","Espionagem da NSA","Documentos vazados por Snowden mostram que a NSA espionou Dilma. Ela cancela a visita de Estado a Washington.",["nsa"]],
+ ["br","jul 2014","decisão","BRICS criam o seu banco","Na cúpula de Fortaleza, os cinco países criam o Novo Banco de Desenvolvimento.",["ndb"]],
+ ["era","Bolsonaro · 2019–2022"],
+ ["us","mar–jul 2019","acordo","OCDE, OMC e aliado extra-OTAN","Bolsonaro abre mão do tratamento especial na OMC em troca do apoio americano à OCDE e de trigo sem tarifa. Em julho, os EUA dão ao Brasil o status de aliado preferencial fora da OTAN.",["ocde","otan"]],
+ ["cn","out 2019","proposta","Bolsonaro vai a Pequim","Depois de criticar a China na campanha, Bolsonaro visita Xi Jinping para ampliar o comércio.",["bolsochina"]],
+ ["cn","mar 2020","atrito","Eduardo culpa a China pela covid","O embaixador chinês chama a fala de “insulto maléfico” e cobra desculpas. O chanceler Ernesto Araújo cobra retratação do embaixador.",["eduardo"]],
+ ["us","jun–jul 2020","pressão e oferta","5G sem a Huawei","Os EUA discutem um fundo para financiar equipamentos da Ericsson e da Nokia. Semanas depois, o embaixador diz que haverá “consequências” se a Huawei entrar.",["fundo5g","chapman"]],
+ ["cn","mai 2021","atrito","Atraso nos insumos da CoronaVac","O Butantan liga o atraso às declarações de Bolsonaro; a embaixada nega e o ministro da Saúde diz que o problema é contratual.",["ifa","queiroga"]],
+ ["br","2021","decisão","Leilão do 5G sem veto à Huawei","O edital da Anatel não exclui fornecedores chineses.",["leilao5g"]],
+ ["era","Lula 3 · 2023–hoje"],
  ["cn","fev–mar 2023","sanitário","Caso de vaca louca suspende a carne","Pelo protocolo entre os dois países, o próprio Brasil suspende os embarques. A China retoma as compras um mês depois.",["vaca"]],
- ["br","nov 2024","decisão","Brasil não entra na Rota da Seda","Assina 37 acordos com a China na visita de Xi Jinping, mas não adere à iniciativa chinesa.",["rota"]],
- ["cn","dez 2024","problema","Resgate na obra da BYD","163 trabalhadores chineses são resgatados em Camaçari; depois, mais 57.",["byd"]],
- ["cn","mai 2025","proposta","R$ 27 bilhões em anúncios","Na visita de Lula a Pequim, empresas chinesas anunciam investimentos no Brasil.",["pequim25"]],
- ["us","jul 2025","pressão","Carta e tarifa de 50%","Trump anuncia a tarifa citando o julgamento de Bolsonaro e manda abrir investigação pela Seção 301, que inclui o Pix. A tarifa vale a partir de 6 de agosto.",["carta","tarifa"]],
+ ["cn","abr 2023","proposta","Lula em Pequim","Lula e Xi assinam 15 acordos, e Lula critica o domínio do dólar no comércio.",["lula23"]],
+ ["br","nov 2024","decisão","Brasil não entra na Rota da Seda","Assina 37 acordos com a China na visita de Xi, mas não adere à iniciativa chinesa.",["rota"]],
+ ["cn","mai 2025","proposta","R$ 27 bilhões em anúncios","Na segunda visita de Lula a Pequim, empresas chinesas anunciam investimentos no Brasil.",["pequim25"]],
+ ["us","jul 2025","ameaça","Tarifa extra a quem se alinhar ao BRICS","Trump faz a ameaça enquanto os líderes do BRICS se reúnem no Rio.",["brics25"]],
+ ["us","jul 2025","ameaça","Carta e tarifa de 50%","Trump cita o julgamento de Bolsonaro e abre investigação pela Seção 301, que inclui o Pix. A tarifa vale desde 6 de agosto.",["carta","tarifa"]],
  ["us","jul 2025","sanção","Lei Magnitsky contra Moraes","O Tesouro americano sanciona o ministro do STF e a esposa.",["magn"]],
- ["us","nov 2025","recuo","EUA retiram 40% de carne e café","Depois de negociação entre os governos, parte dos produtos agrícolas sai da tarifa extra.",["retira40"]],
- ["us","dez 2025","recuo","Moraes sai da lista Magnitsky","O Tesouro retira o ministro, a esposa e o instituto da família da lista de sanções.",["magn"]],
- ["cn","dez 2025","defesa comercial","Salvaguarda da carne para todos","A China anuncia cotas por país por três anos e 55% a mais acima da cota. Vale para Brasil, Argentina, Austrália, EUA e outros.",["salva"]],
- ["us","jan 2026","militar","Captura de Maduro na Venezuela","Operação militar americana leva Maduro para os EUA. O governo brasileiro condena o ataque.",["maduro"]],
- ["us","fev 2026","proposta","US$ 565 milhões para terras raras","A agência americana DFC financia a Serra Verde, em Goiás.",["serra"]],
- ["us","fev 2026","Justiça","Suprema Corte derruba a tarifa","A Corte decide que Trump passou do limite ao impor as tarifas sem o Congresso.",["aosfatos"]],
- ["br","jun 2026","decisão","Brasil vai emitir títulos em yuan","O ministro da Fazenda, Dario Durigan, anuncia em Xangai a primeira emissão de dívida brasileira em moeda chinesa.",["yuan"]],
- ["us","jul 2026","pressão","Nova tarifa de 25%, mais 12,5%","Termina a investigação da Seção 301 e entra a tarifa de 25%, sem carnes, café e minérios. No dia seguinte, sobretaxa de 12,5%.",["aosfatos"]],
- ["br","set 2026","decisão","Lei de minerais críticos","Lula sanciona a política nacional, com incentivos de R$ 5 bilhões e instrumentos de controle sobre operações sensíveis.",["minerais"]],
+ ["us","nov–dez 2025","recuo","Carne e café saem da tarifa; Moraes sai da lista","Depois de negociação, os EUA retiram a tarifa extra de 40% de produtos agrícolas e, em dezembro, tiram Moraes da lista Magnitsky.",["retira40","magn"]],
+ ["cn","dez 2025","defesa comercial","Salvaguarda da carne para todos","A China cria cotas por país por três anos, com 55% a mais acima da cota. Vale para Brasil, Argentina, Austrália, EUA e outros.",["salva"]],
+ ["us","jan 2026","militar","Captura de Maduro","Operação militar americana na Venezuela leva Maduro para os EUA. O governo brasileiro condena.",["maduro"]],
+ ["us","fev 2026","proposta e Justiça","Terras raras e Suprema Corte","A DFC financia US$ 565 milhões da Serra Verde. Duas semanas depois, a Suprema Corte americana derruba as tarifas de Trump.",["serra","aosfatos"]],
+ ["us","mai 2026","ameaça","CV e PCC na lista de terroristas","Lula vai à Casa Branca para tentar evitar e propõe cooperação contra a lavagem de dinheiro. Os EUA fazem a designação mesmo assim.",["pcc"]],
+ ["br","jun 2026","decisão","Títulos em yuan","O ministro da Fazenda, Dario Durigan, anuncia em Xangai a primeira emissão de dívida brasileira em moeda chinesa.",["yuan"]],
+ ["us","jul 2026","ameaça","Nova tarifa de 25%, mais 12,5%","Termina a investigação da Seção 301. Carnes, café e minérios ficam de fora.",["aosfatos"]],
+ ["br","set 2026","decisão","Lei de minerais críticos","Lula sanciona a política nacional, com incentivos e instrumentos de controle sobre operações sensíveis.",["minerais"]],
  ["cn","set–out 2026","defesa comercial","Cota da carne esgotada","A China confirma em 29 de setembro que o Brasil atingiu a cota. Desde 1º de outubro, o excedente paga 67%.",["cota","cota2"]]
 ];
 const C={us:"var(--us)",cn:"var(--cn)",br:"var(--accent)"};
 const tl=document.getElementById('tl');
-tl.innerHTML=T.map(e=>`<li class="ev ${e[0]}" data-s="${e[0]}" style="--c:${C[e[0]]}"><span class="dot" aria-hidden="true"></span><div class="card"><span class="d">${e[1]} · <span class="kind">${e[2]}</span></span><b>${e[3]}</b><p>${e[4]}</p>${srcs(e[5])}</div></li>`).join('');
+tl.innerHTML=T.map(e=>e[0]==='era'?`<li class="era"><span>${e[1]}</span></li>`:`<li class="ev ${e[0]}" data-s="${e[0]}" style="--c:${C[e[0]]}"><span class="dot" aria-hidden="true"></span><div class="card"><span class="d">${e[1]} · <span class="kind">${e[2]}</span></span><b>${e[3]}</b><p>${e[4]}</p>${srcs(e[5])}</div></li>`).join('');
 document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
   document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===ch?'true':'false'));
-  const f=ch.dataset.f;tl.querySelectorAll('.ev').forEach(li=>li.hidden=!(f==='all'||li.dataset.s===f));
+  const f=ch.dataset.f;tl.querySelectorAll('.ev').forEach(li=>li.hidden=!(f==='all'||li.dataset.s===f));tl.querySelectorAll('.era').forEach(li=>li.hidden=f!=='all');
 }));
 
 const card=m=>`<article class="myth"><span class="side">${m[0]}</span><span class="claim">${m[1]}</span><div><span class="tag ${m[2]}">${m[3]}</span></div><p>${m[4]}</p>${srcs(m[5])}</article>`;
-const POSTS=[
- ["Post sobre a carne","“China passa a cobrar tarifa de 67% sobre a carne brasileira”","part","Em parte","Os 67% (12% normais mais 55%) valem só para o que passar da cota anual de 1,1 milhão de toneladas. A salvaguarda vale para todos os grandes exportadores, como o próprio post explica no texto.",["salva","cota"]],
- ["Post sobre a carne","“Em julho a cota estourou e frigoríficos mandaram trabalhador pra casa”","part","Em parte","Os embarques chegaram ao limite por volta de julho, e frigoríficos deram férias coletivas e reduziram o abate. Mas a China só confirmou a cota esgotada em 29 de setembro, e a sobretaxa começou em 1º de outubro.",["cota","cota2"]],
- ["Post sobre o nióbio","“A China já comprou um terço do nióbio brasileiro”","no","Não consta","O post soma coisas diferentes: 15% da CBMM, uma participação minoritária sem controle, com as minas que a CMOC comprou da Anglo American. Ter 15% de uma empresa não é ser dono de 15% do nióbio. Os compradores japoneses e coreanos, com os mesmos 15%, não aparecem no post.",["cbmm","cmoc"]],
- ["Post sobre o nióbio","“Compras de mina sem tiro e sem manchete”","part","Em parte","As compras existiram e estão documentadas, mas todas foram notícia na época. E foram vendas de empresas privadas: Anglo American, Minsur e a própria CBMM.",["cbmm","cmoc","taboca"]],
- ["Post sobre o aço","“Aço chinês fez a siderurgia cortar 5.100 empregos e parar usinas”","ok","Consta","Os números são do Instituto Aço Brasil: 5.100 empregos a menos, R$ 2,5 bilhões suspensos e 64% das importações vindas da China. A ligação entre as duas coisas é a avaliação do próprio setor. O governo respondeu com cota e tarifa de 25%.",["aco"]],
- ["Post sobre energia","“A Huawei entrou na energia de Fernando de Noronha”","part","Em parte","O projeto de energia solar e baterias de Noronha é da Neoenergia, do grupo espanhol Iberdrola, com o Ministério de Minas e Energia e o governo de Pernambuco. A Huawei é uma das fornecedoras de equipamento.",["noronha","huawei"]],
- ["Post sobre dívida","“O ministro da Fazenda entregou em Pequim a carta para emitir dívida em yuan”","ok","Consta","Dario Durigan anunciou em junho de 2026 a primeira emissão de títulos brasileiros em yuan e entregou a carta de intenção ao banco central chinês.",["yuan"]],
- ["Post sobre minerais","“A lei dos minerais críticos foi sancionada em 16 de setembro de 2026”","ok","Consta","Sancionada nessa data, com incentivos fiscais e instrumentos de controle sobre operações sensíveis.",["minerais"]]
-];
 const MYTHS=[
- ["Circula contra a China","“A China está colonizando o Brasil”","no","Não consta","Colônia é perder o controle político. A China tem uma fatia pequena do investimento estrangeiro, o Brasil recusou a Rota da Seda e acaba de criar regras para minerais críticos. O que é real é a dependência comercial: quase 30% das exportações vão para lá.",["bcIED","rota","minerais"]],
- ["Circula contra a China","“Com a China o Brasil só perde”","no","Não consta","O Brasil teve superávit de US$ 29,1 bilhões com a China em 2025, e déficit de US$ 7,5 bilhões com os EUA. A crítica que se sustenta é outra: o Brasil vende matéria-prima e compra produto industrializado.",["mdicCN","mdicUS"]],
+ ["Circula contra a China","“A China está colonizando o Brasil”","no","Não consta","Colônia é perder o controle político. A China tem uma fatia pequena do investimento estrangeiro, o Brasil recusou a Rota da Seda e criou regras para minerais críticos. O que é real é a dependência comercial: quase 30% das exportações vão para lá.",["bcIED","rota","minerais"]],
+ ["Circula contra a China","“Com a China o Brasil só perde”","no","Não consta","O Brasil teve superávit de US$ 29,1 bilhões com a China em 2025 e déficit de US$ 7,5 bilhões com os EUA. A crítica que se sustenta é outra: o Brasil vende matéria-prima e compra produto industrializado.",["mdicCN","mdicUS"]],
  ["Circula a favor da China","“A China só faz parceria, sem interesse”","no","Não consta","A China protege a própria indústria, como na salvaguarda da carne, e já puniu economicamente países como Austrália e Lituânia por divergências políticas.",["salva","lituania","australia"]],
- ["Circula a favor da China","“Os EUA negociam com arma, a China com proposta”","part","Em parte","Com o Brasil, nenhum dos dois usou arma. Os EUA usaram tarifa e sanção com exigência política explícita. Fora do Brasil, os EUA agiram militarmente na Venezuela, e a China já usou coerção econômica.",["carta","maduro","lituania"]],
- ["Circula a favor dos EUA","“Os EUA são o país que mais investe no Brasil”","ok","Consta","26% do estoque de investimento estrangeiro, segundo o Banco Central.",["bcIED"]],
+ ["Circula a favor da China","“Os EUA negociam com ameaça, a China com proposta”","part","Em grande parte","Com o Brasil, as ameaças explícitas documentadas vieram quase todas dos EUA, de 2020 a 2026. Mas os EUA também fizeram propostas, e a China já usou punição econômica contra outros países.",["chapman","carta","pcc","lituania"]],
+ ["Circula a favor dos EUA","“Os EUA são quem mais investe no Brasil”","ok","Consta","26% do estoque, segundo o Banco Central, em indústria, finanças e tecnologia. Boa parte do dinheiro novo vai para data centers das próprias empresas americanas.",["bcIED","cni"]],
  ["Circula a favor dos EUA","“O tarifaço já acabou”","no","Não consta","A Suprema Corte americana derrubou a tarifa original em fevereiro de 2026, mas desde julho vale uma nova tarifa de 25%, mais uma sobretaxa de 12,5%.",["aosfatos"]],
- ["Circula contra os EUA","“A tarifa dos EUA foi por causa do Bolsonaro”","ok","Consta","A carta de Trump citava o julgamento de Bolsonaro e chamava o processo de “caça às bruxas”. A nova tarifa de 2026 usa outros motivos, como o Pix e a pirataria.",["carta","aosfatos"]]
+ ["Circula contra os EUA","“A tarifa dos EUA foi por causa do Bolsonaro”","ok","Consta","A carta de Trump citava o julgamento de Bolsonaro e chamava o processo de “caça às bruxas”. A nova tarifa de 2026 usa outros motivos, como o Pix e a pirataria.",["carta","aosfatos"]],
+ ["Circula contra o PT","“Foi o PT que jogou o Brasil nos braços da China”","part","Em parte","A China virou a maior parceira em 2009, com Lula, puxada pela compra de soja e minério. Mas a aproximação continuou com Bolsonaro, que visitou Pequim em 2019 e não vetou a Huawei no 5G.",["parc09","bolsochina","leilao5g"]],
+ ["Circula a favor de Bolsonaro","“Bolsonaro rompeu com a China”","no","Não consta","Houve atritos, como a fala de Eduardo Bolsonaro em 2020, mas Bolsonaro visitou Pequim, a China seguiu como maior compradora e o leilão do 5G não excluiu a Huawei.",["eduardo","bolsochina","leilao5g"]]
 ];
-document.getElementById('posts').innerHTML=POSTS.map(card).join('');
 document.getElementById('myths').innerHTML=MYTHS.map(card).join('');
 })();
 </script>
