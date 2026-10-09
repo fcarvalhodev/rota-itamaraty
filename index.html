@@ -295,7 +295,7 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
 
 <footer>
   <p>Cada item traz o link do documento, da lei ou da reportagem de onde saiu. Valores em dólar, sem correção pela inflação. As fontes de investimento usam métodos diferentes, como explicado no gráfico.</p>
-  <p>Atualizado em 9 de outubro de 2026.</p>
+  <p>Atualizado em 10 de outubro de 2026.</p>
 </footer>
 </main>
 
@@ -305,6 +305,12 @@ const S={
   mdicUS:["DGABC: comércio com os EUA em 2025","https://www.dgabc.com.br/Noticia/4277972/com-tarifaco-de-trump-exportacoes-brasileiras-para-os-eua-cairam-6-6-em-2025"],
   mdicCN:["Monitor Mercantil: balança de 2025","https://monitormercantil.com.br/deficit-com-eua-cresce-e-reduz-saldo-da-balanca-comercial-em-2025/"],
   bcIED:["InfoMoney: dados do Banco Central","https://www.infomoney.com.br/?p=3041880"],
+  cpfl:["Exame: State Grid compra a CPFL","https://exame.com/negocios/state-grid-fecha-contrato-de-compra-da-cpfl-por-r-1419-bi"],
+  eletr:["InvestNews: chineses no setor elétrico","https://investnews.com.br/negocios/como-o-setor-eletrico-brasileiro-se-tornou-o-destino-preferido-dos-investimentos-chineses/amp/"],
+  sgtrans:["Forbes: State Grid e 10% da transmissão","https://forbes.com.br/forbes-money/2025/11/state-grid-compra-linha-de-transmissao-da-brookfield-por-r-7-bilhoes/"],
+  tcp:["IstoÉ Dinheiro: TCP de Paranaguá","https://istoedinheiro.com.br/terminal-de-paranagua-e-vendido-por-r-29-bi"],
+  portos:["Diálogo Américas: chineses nos portos","https://dialogo-americas.com/articles/chinas-growing-grip-on-brazils-key-ports/"],
+  ferro:["InvestNews: ferrovias e chineses","https://investnews.com.br/negocios/brasil-tenta-de-novo-expandir-as-ferrovias-mas-ainda-falta-combinar-com-os-chineses/amp/"],
   cebc25:["Monitor Mercantil: estudo CEBC 2025","https://monitormercantil.com.br/brasil-lidera-vinda-de-investimentos-chineses-no-mundo/"],
   cebc24:["Poder360: CEBC 2024","https://www.poder360.com.br/poder-china/investimento-chines-no-brasil-cresce-113/"],
   cbmm:["Ibram (2011)","https://ibram.org.br/noticia/chineses-pagam-us-195-bi-por-15-da-cbmm"],
@@ -462,6 +468,8 @@ document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
 
 const card=m=>`<article class="myth"><span class="side">${m[0]}</span><span class="claim">${m[1]}</span><div><span class="tag ${m[2]}">${m[3]}</span></div><p>${m[4]}</p>${srcs(m[5])}</article>`;
 const MYTHS=[
+ ["Circula contra a China","“Uma estatal chinesa comprou a CPFL”","ok","Verdade","A State Grid comprou o controle da CPFL em janeiro de 2017, no governo Temer: 54,6% por R$ 14,2 bilhões. Quem vendeu foram a Camargo Corrêa e fundos de pensão como Previ e Petros. A CPFL atende cerca de 15% do mercado de distribuição de energia.",["cpfl","eletr"]],
+ ["Circula contra a China","“A China domina a logística do Brasil: energia, transmissão, portos e ferrovias”","no","Falso","A presença é real, mas não é domínio. A State Grid opera cerca de 10% da rede de transmissão e controla a CPFL, com 15% da distribuição. Na geração, as chinesas somam perto de 6%. Nos portos, controla o terminal de contêineres de Paranaguá, o terceiro maior do país, e tem um terminal de grãos em Santos. Nas ferrovias, nenhuma chinesa opera concessão de carga; há só interesse em leilões e uma sócia num trem de passageiros em São Paulo.",["sgtrans","eletr","tcp","portos","ferro"]],
  ["Circula contra a China","“A China está colonizando o Brasil”","no","Falso","Colônia é perder o controle político. A China tem uma fatia pequena do investimento estrangeiro, o Brasil recusou a Rota da Seda e criou regras para minerais críticos. O que é real é a dependência comercial: quase 30% das exportações vão para lá.",["bcIED","rota","minerais"]],
  ["Circula contra os EUA","“O Brasil é colônia dos EUA”","no","Falso","O Brasil manteve o julgamento de Bolsonaro mesmo sob tarifa e sanção americanas. A dependência dos EUA é real nas finanças, na tecnologia e no investimento, mas dependência não é colônia.",["carta","bcIED","magnbank"]],
  ["Circula nos dois lados","“Investimento estrangeiro não deixa nada para o povo”","part","Meia verdade","Salários, impostos e fábricas ficam aqui; o lucro vai para fora. O retorno depende do tipo: obra nova gera mais emprego que comprar empresa pronta. Exportar para os EUA emprega mais brasileiros que exportar para a China.",["cebcjobs","cebcpdf","contas"]],
