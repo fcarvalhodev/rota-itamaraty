@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Itamaraty Route</title>
+<meta name="description" content="How Brazil has negotiated with the US and with China since 2003: trade, where each one invests and in whom, and when an offer or a threat came. With the same standard for both.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: the Rotas skeleton (condensed Archivo, Source Serif, JetBrains Mono). Itamaraty's own colour is ipê magenta.
+   EUA is always blue and on the left; China is always orange and on the right, so every comparison reads the same way.
+   Order: hero → numbers side by side → who owns strategic assets (state-owned buyers by country, and which government sold) → where each invests and in whom → how each negotiates since 2003 (shared timeline, by government) → threats × proposals → myths → verdict. */
+:root{
+  --bg:#f2f0ee; --paper:#fbfaf9; --ink:#1c1b1f; --muted:#5e5d66; --line:#d9d5d1; --soft:#e9e6e2;
+  --accent:#9b2c6b; --accent-soft:#f4e0ea;
+  --us:#2a78d6; --us-soft:#e1ecfa; --cn:#eb6834; --cn-soft:#fbe6dc; --both:#8a8c92;
+  --ok:#1f6b45; --ok-soft:#dcefe3; --no:#a12a2a; --no-soft:#f6dede; --part:#7a5a00; --part-soft:#f6ebc9;
+  --display:"Archivo","Arial Narrow",Impact,sans-serif;
+  --ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#131216; --paper:#1b1a1f; --ink:#eceae6; --muted:#a4a2ab; --line:#2f2d34; --soft:#25232a;
+  --accent:#e58ab8; --accent-soft:#3a1d2c;
+  --us:#3987e5; --us-soft:#17263a; --cn:#d95926; --cn-soft:#3a2016; --both:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131216; --paper:#1b1a1f; --ink:#eceae6; --muted:#a4a2ab; --line:#2f2d34; --soft:#25232a;
+  --accent:#e58ab8; --accent-soft:#3a1d2c;
+  --us:#3987e5; --us-soft:#17263a; --cn:#d95926; --cn-soft:#3a2016; --both:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.6}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+.kicker,.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kicker{color:var(--accent)}
+h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(64px,17vw,170px);line-height:.84;margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+h3{font-family:var(--ui);font-weight:700;font-size:19px;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+header,section{display:grid;grid-template-columns:minmax(0,1fr)}
+header{padding-block:40px 8px;gap:18px}
+section{padding-block:48px 8px;gap:18px}
+.lede{font-size:19px;max-width:62ch}
+.sub{color:var(--muted);max-width:62ch}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px}
+.src a{color:var(--muted)}
+.src a:hover{color:var(--accent)}
+
+/* hero: two flags of the comparison meeting at Brasília */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;margin-top:6px}
+.duo .side{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 14px;display:grid;gap:2px}
+.duo .side.us{border-top:5px solid var(--us)}
+.duo .side.cn{border-top:5px solid var(--cn);text-align:right}
+.duo b{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:28px;text-transform:uppercase;line-height:1}
+.duo .mid{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);text-align:center;line-height:1.3}
+.duo .mid i{display:block;width:14px;height:14px;border-radius:50%;background:var(--accent);margin:0 auto 6px}
+
+/* paired bars */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:13px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:14px;height:14px;border-radius:3px;background:var(--c)}
+.pairs{display:grid;gap:14px}
+.pair{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;gap:8px}
+.pair h3{font-size:17px}
+.bar{display:grid;grid-template-columns:4.2em minmax(0,1fr) auto;gap:10px;align-items:center;font-family:var(--mono);font-size:13px}
+.bar .t{height:16px;background:var(--soft);border-radius:2px;position:relative;overflow:hidden}
+.bar .f{position:absolute;top:0;bottom:0;left:0;background:var(--c);border-radius:2px}
+.bar.neg .f{left:auto;right:auto}
+.bar b{font-weight:600;min-width:7.5em;text-align:right}
+.diverge .t{overflow:visible}
+.diverge .t::after{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;border-left:1px solid var(--muted)}
+.pair .note{font-size:14.5px;color:var(--muted)}
+.share{display:grid;gap:6px}
+.share .strip{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--soft)}
+.share .strip span{display:block;height:100%}
+.share .lab{display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+
+/* two columns: who owns what */
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:720px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.col{background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:4px;padding:14px 16px;display:grid;gap:12px;align-content:start}
+.col>h3{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:28px;text-transform:uppercase}
+.asset{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:10px}
+.asset .y{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.asset b{font-family:var(--ui)}
+.asset p{font-size:15.5px}
+
+/* timeline, two lanes */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:36px}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--c,var(--ink))}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2px solid var(--line)}
+.ev{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:start;padding-block:8px}
+.ev .dot{grid-column:2;justify-self:center;width:14px;height:14px;border-radius:50%;background:var(--c);margin-top:16px;box-shadow:0 0 0 3px var(--bg);z-index:1}
+.ev .card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:10px 12px;display:grid;gap:4px}
+.ev.us .card{grid-column:1;grid-row:1;border-right:4px solid var(--us)}
+.ev.cn .card{grid-column:3;grid-row:1;border-left:4px solid var(--cn)}
+.ev.br .card{grid-column:1/-1;grid-row:1;border-left:4px solid var(--accent);margin-inline:12%;z-index:1}
+.ev.br .dot{display:none}
+.ev .d{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.ev b{font-family:var(--ui);font-size:15.5px;line-height:1.3}
+.ev p{font-size:14.5px;color:var(--muted)}
+.ev .kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.ev[hidden]{display:none}
+.era{list-style:none;position:relative;z-index:1;text-align:center;padding-block:22px 6px}
+.era span{display:inline-block;background:var(--bg);padding:2px 12px;font-family:var(--display);font-stretch:66%;font-weight:800;font-size:22px;text-transform:uppercase}
+.era[hidden]{display:none}
+.col .sum{font-size:15.5px}
+.dep{display:grid;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.dep .row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:14px 16px;border-top:1px solid var(--line)}
+.dep .row:first-child{border-top:0}
+.dep .area{font-family:var(--ui);font-weight:700;font-size:16px}
+.dep .area small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dep .side{font-size:15px;padding-left:10px;border-left:4px solid var(--c)}
+.dep .side b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--c);display:block}
+.dep .row .src{grid-column:1/-1}
+@media (min-width:720px){.dep .row{grid-template-columns:180px minmax(0,1fr) minmax(0,1fr);column-gap:16px}}
+.ownbox{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;gap:10px}
+.deals{display:grid;gap:12px}
+.deals .grp{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:4px;padding:14px 16px;display:grid;gap:10px}
+.deals .grp h3{font-size:20px}
+.deals .grp .who{font-size:15px;color:var(--muted)}
+.deals .deal{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;border-top:1px solid var(--line);padding-top:8px}
+.deals .deal .y{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.deals .deal .y b{color:var(--ink);font-weight:600}
+.deals .deal strong{font-family:var(--ui);font-size:16px}
+.deals .deal p{font-size:15px}
+.gov{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.gov div{background:var(--soft);border-radius:4px;padding:10px 12px;display:grid;gap:2px}
+.gov b{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:40px;line-height:1}
+.gov span{font-family:var(--ui);font-weight:700;font-size:15px}
+.gov small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.hb{display:grid;gap:6px}
+.hb .r{display:grid;grid-template-columns:8.5em minmax(0,1fr) 3.6em;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px}
+.hb .t{height:12px;background:var(--soft);border-radius:2px;position:relative}
+.hb .f{position:absolute;inset:0 auto 0 0;background:var(--c);border-radius:2px}
+.hb .r b{text-align:right;font-weight:600}
+.hb .cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:640px){.era{text-align:left;padding-left:22px}}
+@media (max-width:640px){
+  .tl::before{left:7px}
+  .ev{grid-template-columns:28px minmax(0,1fr)}
+  .ev .dot{grid-column:1;justify-self:start}
+  .ev.us .card,.ev.cn .card,.ev.br .card{grid-column:2;margin-inline:0}
+  .ev.us .card{border-right:1px solid var(--line);border-left:4px solid var(--us)}
+}
+
+/* arma ou proposta */
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (min-width:720px){.split{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:grid;gap:10px;align-content:start}
+.box.us{border-left:6px solid var(--us)}
+.box.cn{border-left:6px solid var(--cn)}
+.box h3{font-size:18px}
+.box ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15.5px}
+.box .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.answer{background:var(--accent-soft);border:1px solid var(--accent);border-radius:4px;padding:16px 18px;display:grid;gap:8px}
+
+/* evidence tags + myths */
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:500;line-height:1.4;white-space:nowrap}
+.tag.ok{background:var(--ok-soft);color:var(--ok);border:1px solid var(--ok)}
+.tag.no{background:var(--no-soft);color:var(--no);border:1px solid var(--no)}
+.tag.part{background:var(--part-soft);color:var(--part);border:1px solid var(--part)}
+.myths{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.myth{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:grid;gap:10px;align-content:start}
+.myth .side{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.myth .claim{font-family:var(--ui);font-weight:700;font-size:18px;line-height:1.25}
+.myth p{font-size:16px}
+
+.verdict{background:var(--ink);color:var(--paper);border-radius:4px;padding:22px 20px;display:grid;gap:12px}
+.verdict h2{color:var(--paper)}
+.verdict p{max-width:64ch}
+.verdict ul{margin:0;padding-left:20px;display:grid;gap:6px}
+footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;gap:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head><body>
+
+
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato detalhado */body{font-size:17px;line-height:1.6}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(60px,15vw,140px);line-height:.86;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Routes"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/en/">Routes</a><a href="https://fcarvalhodev.github.io/rota-washington/en/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/en/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/en/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/en/">Faith</a><a href="https://fcarvalhodev.github.io/rota-esplanada/en/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/en/" aria-current="page">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/en/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/en/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/en/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/en/">Treasury</a><a href="https://fcarvalhodev.github.io/rota-rouanet/en/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/en/">Winds</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/en/">Algorithm</a><a class="rb-lang" href="../" hreflang="pt-BR" lang="pt-BR">PT</a></div></nav>
+<header class="wrap">
+  <div class="kicker">Itamaraty Route · Brazil between Washington and Beijing, 2003–2026</div>
+  <h1>Itamaraty</h1>
+  <p class="lede">How Brazil has negotiated with the US and with China since Lula's first government: what each one buys, where and in whom it invests, and when the conversation came with an offer or with a threat. Trade compared over the same period; investment presented with the limits of each survey.</p>
+  <a class="rv-btn" href="visual.html"><span aria-hidden="true">📊</span> See the summary in icons</a>
+  <div class="duo" aria-hidden="true">
+    <div class="side us"><span class="mono">Washington</span><b>US</b></div>
+    <div class="mid"><i></i>Brasília</div>
+    <div class="side cn"><span class="mono">Beijing</span><b>China</b></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section aria-labelledby="h-num">
+  <h2 id="h-num">The numbers side by side</h2>
+  <p class="sub">2025 trade and accumulated investment. The US always appears in blue, China always in orange.</p>
+  <div class="legend"><span style="--c:var(--us)"><i></i>US</span><span style="--c:var(--cn)"><i></i>China</span></div>
+  <div class="pairs" id="pairs"></div>
+</section>
+
+<section aria-labelledby="h-dono">
+  <h2 id="h-dono">Who owns strategic infrastructure</h2>
+  <p class="sub">It is not only China. Companies owned by foreign governments, or with a government as a major shareholder, have bought power plants, transmission lines, distributors, gas pipelines, a refinery, oil fields and port terminals in Brazil. Most of the time, the seller was the Brazilian government itself, through auctions or sales by Petrobras and Eletrobras.</p>
+  <div class="ownbox" id="rank"></div>
+  <div class="ownbox" id="porgov"></div>
+  <div id="deals" class="deals"></div>
+  <p class="sub">The US does not appear on this list because it has no state companies of this kind here: the American presence comes from private companies and, since 2026, from financing by the DFC agency. The list shows the largest deals we found with a source, not all of them. Before that, in the 1990s, privatizations had already handed distributors to foreign groups, such as Eletropaulo in 1998.</p>
+  <h3 style="margin-top:8px">Where Brazil depends on each one</h3>
+  <p class="sub">Owning a company is one thing. Dependence is another: needing someone a lot to sell, invest, get financing or defend yourself.</p>
+  <div class="dep" id="dep"></div>
+</section>
+
+<section aria-labelledby="h-inv">
+  <h2 id="h-inv">Where each one invests, and in whom</h2>
+  <p class="sub">Investing can mean building something new or buying a company that already exists. That changes where the money goes and who keeps the profit.</p>
+  <div class="cols">
+    <div class="col" style="--c:var(--us)" id="inv-us"><h3>US</h3></div>
+    <div class="col" style="--c:var(--cn)" id="inv-cn"><h3>China</h3></div>
+  </div>
+  <h3 style="margin-top:8px">What stays in Brazil and what goes back abroad</h3>
+  <p class="sub">Even when a foreign company invests in its own subsidiary, part of the money stays here: wages, taxes, purchases from suppliers and the factory itself. What leaves are the profits sent to the parent company. In 2025, Brazil sent abroad a net US$81.3 billion in profits and interest, and received US$77.6 billion in direct investment. This page does not have a country-by-country breakdown that would allow comparing these remittances; that does not show more detailed statistics do not exist.</p>
+  <span class="src"><a href="https://www.gazetadopovo.com.br/economia/rombo-contas-externas-recorde-atinge-68-8-bilhoes-2025/" target="_blank" rel="noopener">Gazeta do Povo: 2025 external accounts</a></span>
+  <div class="dep" id="ret"></div>
+</section>
+
+<section aria-labelledby="h-neg">
+  <h2 id="h-neg">How each one negotiates</h2>
+  <p class="sub">From Lula 1 to today, the same timeline for both. On the left what came from Washington, on the right what came from Beijing, in the middle Brazil's decisions.</p>
+  <div class="chips" role="group" aria-label="Filter">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" type="button" data-f="us" aria-pressed="false" style="--c:var(--us)"><i aria-hidden="true"></i>US</button>
+    <button class="chip" type="button" data-f="cn" aria-pressed="false" style="--c:var(--cn)"><i aria-hidden="true"></i>China</button>
+    <button class="chip" type="button" data-f="br" aria-pressed="false" style="--c:var(--accent)"><i aria-hidden="true"></i>Brazil</button>
+  </div>
+  <ol class="tl" id="tl"></ol>
+</section>
+
+<section aria-labelledby="h-arma">
+  <h2 id="h-arma">“The US negotiates with threats, China with offers”</h2>
+  <p class="sub">On social media the phrase appears as “the US negotiates at gunpoint”, meaning with threats. We listed each one's threats and offers to Brazil since 2003.</p>
+  <div class="split">
+    <div class="box us">
+      <h3>US</h3>
+      <span class="lbl">Threats and punishments</span>
+      <ul>
+        <li><b>2020:</b> the ambassador says Brazil will face “consequences” if it lets Huawei into 5G.</li>
+        <li><b>2025:</b> Trump threatens an extra tariff on anyone who aligns with BRICS, during the summit in Rio.</li>
+        <li><b>2025:</b> a 50% tariff with a letter citing Bolsonaro's trial, and a Magnitsky sanction against Moraes.</li>
+        <li><b>2026:</b> CV and PCC designated as terrorists, against the request of Lula, who feared sanctions on banks and military action.</li>
+        <li><b>2026:</b> a new 25% tariff and a 12.5% surcharge, citing even Pix.</li>
+      </ul>
+      <span class="lbl">Offers and agreements</span>
+      <ul>
+        <li><b>2009–2014:</b> after losing to Brazil at the WTO in the cotton case, the US pays US$147 million a year and another US$300 million in the final settlement.</li>
+        <li><b>2019:</b> support for joining the OECD, in exchange for Brazil giving up special treatment at the WTO, and major non-NATO ally status.</li>
+        <li><b>2020:</b> a fund to finance Ericsson and Nokia 5G instead of Huawei.</li>
+        <li><b>2025–2026:</b> a rollback of beef and coffee tariffs after negotiation, and US$565 million for rare earths.</li>
+      </ul>
+    </div>
+    <div class="box cn">
+      <h3>China</h3>
+      <span class="lbl">Threats and punishments</span>
+      <ul>
+        <li><b>2020:</b> the ambassador calls Eduardo Bolsonaro's remark a “malicious insult” and demands an apology.</li>
+        <li><b>2021:</b> delays in CoronaVac vaccine inputs. Butantan linked the delay to Bolsonaro's attacks; the embassy denied it and the Health Ministry said it was a contract issue. It was never proven to be retaliation.</li>
+        <li><b>2025–2026:</b> a beef safeguard with a quota and surcharge, applied to all major exporters.</li>
+        <li><b>Outside Brazil:</b> economic punishment of Australia and Lithuania after political disagreements.</li>
+      </ul>
+      <span class="lbl">Offers and agreements</span>
+      <ul>
+        <li><b>2004:</b> ten agreements and a promise of US$10 billion in investment when Brazil recognizes China as a market economy.</li>
+        <li><b>2014:</b> the New Development Bank, created by BRICS in Fortaleza.</li>
+        <li><b>2023 and 2024:</b> 15 agreements on Lula's visit to Beijing and 37 on Xi's visit to Brasília.</li>
+        <li><b>2025:</b> R$27 billion in announcements and Brazil as the top destination for Chinese investment in the world.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="answer">
+    <span class="tag part" style="justify-self:start">Half true</span>
+    <p><b>In the episodes selected on this page, explicit political pressure comes mainly from Washington</b>, several with political demands, from 2020 to 2026. China's was a harsh verbal reaction and a vaccine episode never proven to be retaliation.</p>
+    <p>Both halves of the phrase have caveats. The US also makes offers and paid when it lost at the WTO. China has punished other countries economically and uses its weight as the largest buyer, as the beef quota showed. Outside Brazil, the US acted militarily in Venezuela in 2026 and supported the 1964 coup with Operation Brother Sam.</p>
+    <span class="src"><a href="https://olhardigital.com.br/noticia/embaixador-dos-eua-diz-que-brasil-tera-consequencias-se-permitir-huawei-no-5g/104348" target="_blank" rel="noopener">Olhar Digital: “consequences”</a><a href="https://www.jb.com.br/mundo/2025/07/1056101-trump-ameaca-tarifas-extras-de-10-sobre-os-brics-enquanto-lideres-se-reunem-no-brasil.html" target="_blank" rel="noopener">JB: threat to BRICS</a><a href="https://www.infomoney.com.br/mundo/eua-classificam-comando-vermelho-e-pcc-como-organizacoes-terroristas-globais/" target="_blank" rel="noopener">InfoMoney: CV and PCC</a><a href="https://www.poder360.com.br/governo/ernesto-cobra-retratacao-de-embaixador-chines-por-resposta-a-eduardo-bolsonaro/" target="_blank" rel="noopener">Poder360: Chinese ambassador</a><a href="https://www.metropoles.com/brasil/butantan-diz-que-ataques-de-bolsonaro-a-china-afetam-envio-de-insumos" target="_blank" rel="noopener">Metrópoles: vaccine inputs</a><a href="https://www.moneytimes.com.br/queiroga-diz-que-problema-de-ifa-para-butantan-e-contratual-e-nao-diplomatico/" target="_blank" rel="noopener">Money Times: Queiroga</a><a href="https://www.csis.org/analysis/chinas-economic-coercion-lessons-lithuania" target="_blank" rel="noopener">CSIS: Lithuania</a><a href="https://istoe.com.br/o-que-foi-a-operacao-brother-sam-apoio-dos-eua-ao-golpe-de-64" target="_blank" rel="noopener">IstoÉ: Brother Sam</a></span>
+  </div>
+</section>
+
+
+<section aria-labelledby="h-mitos">
+  <h2 id="h-mitos">Is it true?</h2>
+  <p class="sub">The most repeated claims from both sides.</p>
+  <div class="myths" id="myths"></div>
+</section>
+
+<section aria-labelledby="h-ver">
+  <div class="verdict">
+    <h2 id="h-ver">Verdict</h2>
+    <p><b>Neither domination nor partnership without interest.</b> Brazil depends on the two powers in different ways.</p>
+    <ul>
+      <li><b>China:</b> buys almost 30% of what Brazil exports and Brazil has a surplus with it. It invests mainly in energy and oil, mostly by buying companies that already existed. The risk is concentration: a buyer that big weighs on prices, as the beef quota showed.</li>
+      <li><b>US:</b> still the largest foreign investor, with about a quarter of the stock, in industry, finance and technology. This page's selection includes US pressure with political conditions between 2020 and 2026; it is not an exhaustive inventory of all diplomatic relations.</li>
+      <li><b>Return for the people:</b> wages, purchases, taxes and remittances have different effects. The available data do not allow comparing total jobs at all American and Chinese companies. Acquisitions carry historical weight in the CEBC survey; greenfield projects gained share in 2025, but already existed before.</li>
+      <li><b>Strategic assets:</b> the table brings together operations by state companies from China and from Italy, France, Norway, the Emirates, Canada and Singapore. It includes stakes, acquisitions and concessions carried out under different Brazilian governments, with their own rules. The September 2026 critical minerals policy added control instruments; mining and investments were already subject to earlier regulation.</li>
+    </ul>
+    <p>The useful question is not which power is good, but how much Brazil depends on each and what rules it has for negotiating with both.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Each item links to the document, law or report it came from. Values in dollars, not adjusted for inflation. The investment sources use different methods, as explained in the chart. Sources are in Portuguese.</p>
+  <p>Updated on October 10, 2026.</p>
+</footer>
+
+<section id="fontes-revisao" aria-labelledby="h-fontes-revisao" style="margin-block:32px;padding:20px;border:1px solid var(--line);border-radius:6px">
+<h2 id="h-fontes-revisao">Sources and limits of this reading</h2>
+<p>Investment stock and the historical sum of projects are not interchangeable. Estimates of trade-related jobs do not prove causation or the total number of jobs at the companies. “Colony” and “dependence” are concepts interpreted here; the selection of episodes is not exhaustive.</p>
+<div class="src"><a href="https://www.gov.br/mre/pt-br/canais_atendimento/imprensa/notas-a-imprensa/atos-assinados-por-ocasiao-da-visita-da-presidenta-dilma-rousseff-a-republica-popular-da-china-pequim-12-de-abril-de-2011" target="_blank" rel="noopener">Itamaraty: defense agreement with China</a><a href="https://www.gov.br/mdic/pt-br/assuntos/noticias/2026-periodo-eleitoral/setembro/presidente-sanciona-politica-nacional-de-minerais-criticos-e-estrategicos/" target="_blank" rel="noopener">MDIC: critical minerals policy</a></div>
+<p style="font-size:14px"><a href="https://fcarvalhodev.github.io/rotas/en/metodologia.html">How we tell facts, allegations and interpretations apart</a> · Editorial review: October 10, 2026.</p>
+</section>
+</main>
+
+<script>
+(function(){
+const S={
+  defesaCN:["Itamaraty: defense cooperation, 2011","https://www.gov.br/mre/pt-br/canais_atendimento/imprensa/notas-a-imprensa/atos-assinados-por-ocasiao-da-visita-da-presidenta-dilma-rousseff-a-republica-popular-da-china-pequim-12-de-abril-de-2011"],
+  mdicUS:["DGABC: trade with the US in 2025","https://www.dgabc.com.br/Noticia/4277972/com-tarifaco-de-trump-exportacoes-brasileiras-para-os-eua-cairam-6-6-em-2025"],
+  mdicCN:["Monitor Mercantil: 2025 trade balance","https://monitormercantil.com.br/deficit-com-eua-cresce-e-reduz-saldo-da-balanca-comercial-em-2025/"],
+  bcIED:["InfoMoney: Central Bank data","https://www.infomoney.com.br/?p=3041880"],
+  libra:["Jornal do Brasil: Libra auction","https://www.jb.com.br/economia/noticias/2013/10/21/amp/libra-consorcio-com-petrobras-shell-total-cnpc-e-cnooc-ganha-leilao.html"],
+  belo:["Tribuna PR: Belo Monte transmission line","https://www.tribunapr.com.br/noticias/economia/favorita-state-grid-vence-leilao-de-transmissao-de-belo-monte/"],
+  ctg:["Tribuna PR: CTG takes Jupiá and Ilha Solteira","https://www.tribunapr.com.br/noticias/economia/leilao-de-usinas-tem-chineses-e-estatais-estaduais-entre-os-vencedores/"],
+  nts:["Jornal do Brasil: Petrobras sells NTS","https://www.jb.com.br/economia/noticias/2016/09/23/amp/petrobras-vende-por-us-52-bi-para-brookfield-90-de-seu-gasoduto.html"],
+  cemig:["Poder360: Cemig plants auction","https://www.poder360.com.br/economia/governo-arrecada-r-121-bilhoes-com-leilao-de-usinas-da-cemig/"],
+  buzios:["Forbes: CNOOC in Búzios","https://forbes.com.br/forbes-money/2021/09/petrobras-vende-fatia-de-5-em-buzios-por-us-208-bilhoes-a-chinesa-cnooc/"],
+  sts11:["Canal Rural: COFCO in Santos","https://www.canalrural.com.br/economia/gigante-chinesa-arremata-terminal-de-graos-no-porto-de-santos/"],
+  tag:["Forbes: Petrobras sells TAG","https://forbes.com.br/last/2019/04/petrobras-vende-tag-por-us-86-bi/"],
+  engieState:["Enerdata: French state's stake in Engie","https://www.enerdata.net/publications/daily-energy-news/french-state-has-divested-456-stake-engie.html"],
+  enel:["Poder360: Enel and the Italian government","https://www.poder360.com.br/poder-energia/enel-e-italiana-e-tem-participacao-do-governo-italiano"],
+  celg:["Jornal Opção: Enel buys Celg-D","https://www.jornalopcao.com.br/ultimas-noticias/empresa-italiana-arremata-leilao-da-celg-d-81239/"],
+  carcara:["World Oil: Statoil buys Carcará","https://worldoil.com/news/2016/7/29/statoil-buys-2-5-billion-stake-in-santos-basin-license-from-petrobras"],
+  equinor:["Equinor: shareholders","https://www.equinor.com/en/investors/our-shareholders.html"],
+  rlam:["Forbes: Petrobras sells RLAM","https://forbes.com.br/forbes-money/2021/11/petrobras-conclui-venda-da-refinaria-rlam-ao-grupo-mubadala-capital/"],
+  mubadala:["Bloomberg Línea: Mubadala and Petrobras","https://www.bloomberglinea.com.br/negocios/petrobras-mira-acordo-com-mubadala-por-refinaria-no-primeiro-semestre/"],
+  cpfl:["Exame: State Grid buys CPFL","https://exame.com/negocios/state-grid-fecha-contrato-de-compra-da-cpfl-por-r-1419-bi"],
+  eletr:["InvestNews: Chinese companies in the power sector","https://investnews.com.br/negocios/como-o-setor-eletrico-brasileiro-se-tornou-o-destino-preferido-dos-investimentos-chineses/amp/"],
+  sgtrans:["Forbes: State Grid and 10% of transmission","https://forbes.com.br/forbes-money/2025/11/state-grid-compra-linha-de-transmissao-da-brookfield-por-r-7-bilhoes/"],
+  tcp:["IstoÉ Dinheiro: Paranaguá container terminal","https://istoedinheiro.com.br/terminal-de-paranagua-e-vendido-por-r-29-bi"],
+  portos:["Diálogo Américas: Chinese companies in ports","https://dialogo-americas.com/articles/chinas-growing-grip-on-brazils-key-ports/"],
+  ferro:["InvestNews: railways and Chinese companies","https://investnews.com.br/negocios/brasil-tenta-de-novo-expandir-as-ferrovias-mas-ainda-falta-combinar-com-os-chineses/amp/"],
+  cebc25:["Monitor Mercantil: 2025 CEBC study","https://monitormercantil.com.br/brasil-lidera-vinda-de-investimentos-chineses-no-mundo/"],
+  cebc24:["Poder360: 2024 CEBC","https://www.poder360.com.br/poder-china/investimento-chines-no-brasil-cresce-113/"],
+  cbmm:["Ibram (2011)","https://ibram.org.br/noticia/chineses-pagam-us-195-bi-por-15-da-cbmm"],
+  cmoc:["Mining.com","https://www.mining.com/?p=864563"],
+  taboca:["Fusões & Aquisições","https://fusoesaquisicoes.com/acontece-no-setor/mineracao-taboca-e-vendida-para-a-chinesa-cnmc/"],
+  byd:["Vrum: labor prosecutors sue BYD","https://www.vrum.com.br/noticias/2025/05/7157788-mpt-processa-byd-por-trabalho-escravo-e-trafico-de-pessoas-na-bahia.html"],
+  huawei:["InfoMoney: Huawei and energy","https://www.infomoney.com.br/?p=3410360"],
+  noronha:["Cenário Energia: Noronha","https://cenarioenergia.com.br/2026/05/18/neoenergia-inicia-testes-em-noronha-com-usina-solar-e-mega-sistema-de-baterias-de-49-mwh/"],
+  serra:["Agência iNFRA","https://agenciainfra.com/blog/serra-verde-garante-financiamento-de-us-565-milhoes-com-eua/"],
+  carta:["Poder360: Trump's letter","https://www.poder360.com.br/poder-internacional/leia-a-integra-da-carta-de-trump-a-lula-impondo-tarifa-de-50/"],
+  tarifa:["Poder360: understanding the tariff","https://www.poder360.com.br/poder-internacional/entenda-a-tarifa-de-50-imposta-por-trump-ao-brasil/"],
+  retira40:["Agência Brasil","https://agenciabrasil.ebc.com.br/internacional/noticia/2025-11/trump-retira-tarifa-de-40-sobre-produtos-do-brasil-como-cafe-e-carne"],
+  aosfatos:["Aos Fatos: tariffs in 2026","https://www.aosfatos.org/noticias/trump-nao-cancelou-tarifa/"],
+  magn:["Congresso em Foco","https://www.congressoemfoco.com.br/noticia/114843/governo-americano-retira-moraes-da-lista-da-lei-magnitsky"],
+  maduro:["Band: Brazil criticizes attack","https://www.band.com.br/noticias/brasil-critica-ataque-a-venezuela-e-ve-captura-de-maduro-como-desrespeito-202601030757"],
+  salva:["Diário do Comércio: safeguard","https://diariodocomercio.com.br/agronegocio/china-impoe-restricoes-importacoes-carne-bovina/"],
+  cota:["Tribuna do Sertão: quota reached","https://www.tribunadosertao.com.br/financas/2026/09/29/987780-brasil-atinge-cota-de-carne-bovina-para-a-china-e-novas-vendas-terao-sobretaxa"],
+  cota2:["Times Brasil: impact on meatpackers","https://timesbrasil.com.br/brasil/nova-tarifa-de-55-sobre-exportacoes-de-carne-bovina-brasileira-a-china-comeca-nesta-quinta-e-ja-impacta-frigorificos/"],
+  vaca:["Poder360: China resumes purchases","https://www.poder360.com.br/economia/china-anuncia-retomada-de-importacoes-de-carne-bovina-do-brasil/"],
+  rota:["Acionista: 37 agreements without the Belt and Road","https://acionista.com.br/brasil-firma-37-acordos-com-china-mas-nao-adere-a-nova-rota-da-seda/"],
+  pequim25:["Jovem Pan: R$27 billion","https://jovempan.com.br/economia/macroeconomia/forum-empresarial-brasil-china-celebra-r-27-bilhoes-em-investimentos-de-empresas-dos-dois-paises/"],
+  yuan:["Poder360: yuan bonds","https://www.poder360.com.br/poder-china/em-xangai-durigan-anuncia-que-brasil-emitira-titulos-em-yuans/"],
+  minerais:["DGABC: critical minerals law","https://www.dgabc.com.br/Noticia/4347341/lula-sanciona-lei-que-institui-politica-nacional-de-minerais-criticos-"],
+  aco:["Jornal de Brasília: Aço Brasil data","https://jornaldebrasilia.com.br/noticias/economia/industria-do-aco-no-brasil-reduz-mais-de-5-000-empregos-ate-novembro-e-culpa-importacao-chinesa/"],
+  lituania:["CSIS: Lithuania","https://www.csis.org/analysis/chinas-economic-coercion-lessons-lithuania"],
+  australia:["AIIA: Australia","https://www.internationalaffairs.org.au/australianoutlook/hidden-lessons-from-chinas-coercion-campaign-against-australia"],
+  brother:["IstoÉ: Operation Brother Sam","https://istoe.com.br/o-que-foi-a-operacao-brother-sam-apoio-dos-eua-ao-golpe-de-64"],
+  cni:["Gazeta do Povo: CNI data","https://www.gazetadopovo.com.br/economia/investimento-americano-brasil-crescimento-recorde/"],
+  cebcpdf:["CEBC: Chinese investment 2025","https://static.poder360.com.br/2026/05/Investimentos-Chineses-no-Brasil-2025-CEBC-7mai2026.pdf"],
+  pcc:["InfoMoney: CV and PCC","https://www.infomoney.com.br/mundo/eua-classificam-comando-vermelho-e-pcc-como-organizacoes-terroristas-globais/"],
+  algodao:["Gazeta do Povo: cotton","https://www.gazetadopovo.com.br/economia/eua-pagarao-us-300-mi-para-encerrar-disputa-com-o-brasil-sobre-algodao-eebus4j3sfb9bciw7eo6q9hla/"],
+  nsa:["Estado de Minas: Dilma cancels trip","https://www.em.com.br/app/noticia/politica/2013/09/17/interna_politica,449964/dilma-cancela-viagem-aos-eua.shtml"],
+  ocde:["Agência Brasil: WTO and OECD","https://agenciabrasil.ebc.com.br/internacional/noticia/2019-03/brasil-abrira-mao-de-direitos-na-omc-para-ingressar-na-ocde"],
+  otan:["Poder360: non-NATO ally","https://www.poder360.com.br/internacional/eua-designam-oficialmente-brasil-como-aliado-extra-otan-dw/"],
+  bolsochina:["Bloomberg: Bolsonaro in Beijing","https://www.bloomberg.com/news/articles/2019-10-25/bolsonaro-to-meet-china-s-xi-in-bid-to-balance-ties-with-u-s"],
+  eduardo:["Poder360: Chinese ambassador","https://www.poder360.com.br/governo/ernesto-cobra-retratacao-de-embaixador-chines-por-resposta-a-eduardo-bolsonaro/"],
+  chapman:["Olhar Digital: “consequences”","https://olhardigital.com.br/noticia/embaixador-dos-eua-diz-que-brasil-tera-consequencias-se-permitir-huawei-no-5g/104348"],
+  fundo5g:["Olhar Digital: 5G fund","https://olhardigital.com.br/noticia/eua-discutem-fundo-para-a-infraestrutura-do-5g-no-brasil/102129"],
+  ifa:["Metrópoles: CoronaVac inputs","https://www.metropoles.com/brasil/butantan-diz-que-ataques-de-bolsonaro-a-china-afetam-envio-de-insumos"],
+  queiroga:["Money Times: Queiroga","https://www.moneytimes.com.br/queiroga-diz-que-problema-de-ifa-para-butantan-e-contratual-e-nao-diplomatico/"],
+  leilao5g:["Teletime: 5G auction","https://teletime.com.br/22/12/2021/retrospectiva-2021-o-ano-bilionario-do-leilao-5g-e-da-consolidacao-em-telecom/"],
+  lula23:["IstoÉ: 15 agreements","https://istoe.com.br/lula-e-xi-jinping-assinam-15-acordos-bilaterais"],
+  brics09:["Agência Brasil: BRICS","https://agenciabrasil.ebc.com.br/economia/noticia/2019-11/brics-fomenta-cooperacao-entre-economias-emergentes-ha-13-anos"],
+  ndb:["Decree 8.624/2015 (NDB)","https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8624.htm"],
+  alca:["IHU: the end of the FTAA","https://ihu.unisinos.br/noticias/525411-ha-oito-anos-a-alca-era-enterrada-artigo-de-atilio-a-boron"],
+  econ04:["IPS (2004)","https://www.ipsnews.net/?p=13020"],
+  parc09:["Gazeta do Povo (2010)","https://www.gazetadopovo.com.br/economia/china-foi-o-principal-parceiro-comercial-do-brasil-em-2009-9pnr7xm4zm5ws7slattbwm2q6"],
+  magnbank:["InfoMoney: Moraes's card","https://www.infomoney.com.br/?p=2994184"],
+  cnnAm:["CNN Brasil: Amcham data","https://www.cnnbrasil.com.br/blogs/thais-heredia/economia/macroeconomia/analise-investimento-dos-eua-no-brasil-representa-34-do-total/"],
+  bydjobs:["A Tarde: BYD jobs","https://atarde.com.br/empregos/byd-alcanca-marca-de-mais-de-8-mil-empregos-diretos-em-camacari-1404288"],
+  vistos:["Estado de Minas: work visas","https://www.em.com.br/nacional/2026/05/7426791-empresas-importam-mais-de-mil-chineses-por-mes-para-trabalharem-no-brasil.html"],
+  cebcjobs:["Agência Brasil: CEBC and MDIC study","https://agenciabrasil.ebc.com.br/economia/noticia/2025-09/emprego-no-comercio-brasil-china-cresce-mais-que-nas-demais-parcerias"],
+  contas:["Gazeta do Povo: 2025 external accounts","https://www.gazetadopovo.com.br/economia/rombo-contas-externas-recorde-atinge-68-8-bilhoes-2025/"],
+  brics25:["JB: threat to BRICS","https://www.jb.com.br/mundo/2025/07/1056101-trump-ameaca-tarifas-extras-de-10-sobre-os-brics-enquanto-lideres-se-reunem-no-brasil.html"]
+};
+const L=k=>`<a href="${S[k][1]}" target="_blank" rel="noopener">${S[k][0]}</a>`;
+const srcs=a=>`<span class="src">${a.map(L).join('')}</span>`;
+
+// paired bars
+const P=[
+ {t:"How much Brazil sold in 2025",u:"US$ bn",us:37.7,cn:100.0,max:100,note:"China bought 2.7 times more than the US.",s:["mdicUS","mdicCN"]},
+ {t:"How much Brazil bought in 2025",u:"US$ bn",us:45.2,cn:70.9,max:100,note:"China: about US$70.9 bn, calculated from sales and the balance.",s:["mdicUS","mdicCN"]},
+ {t:"Brazil's balance in 2025",u:"US$ bn",us:-7.5,cn:29.1,max:30,div:true,note:"With the US Brazil had a deficit; with China, a surplus.",s:["mdicUS","mdicCN"]},
+  {t:"Investment surveys: different bases",u:"US$ bn",us:232.8,cn:85.5,max:240,separate:true,note:"US: stock in 2024 by ultimate controller (Central Bank). China: sum of projects 2007–2025 (CEBC). They are not directly comparable measures and do not allow calculating the gap or share between the countries.",s:["bcIED","cebc25"]}
+];
+const fmt=v=>(v<0?'−':'')+Math.abs(v).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+const bar=(lab,v,max,c,div)=>{
+  if(!div){return `<div class="bar"><span>${lab}</span><span class="t"><span class="f" style="--c:${c};width:${Math.abs(v)/max*100}%"></span></span><b>${fmt(v)}</b></div>`}
+  const w=Math.abs(v)/max*50;const left=v<0?50-w:50;
+  return `<div class="bar diverge"><span>${lab}</span><span class="t"><span class="f" style="--c:${c};left:${left}%;width:${w}%"></span></span><b>${fmt(v)}</b></div>`};
+let h=P.map(p=>`<div class="pair"><h3>${p.t} <span class="mono" style="font-size:11px">${p.u}</span></h3>${p.separate?`<p><b>US:</b> ${fmt(p.us)} · stock in 2024</p><p><b>China:</b> ${fmt(p.cn)} · sum of projects 2007–2025</p>`:bar('EUA',p.us,p.max,'var(--us)',p.div)+bar('China',p.cn,p.max,'var(--cn)',p.div)}<p class="note">${p.note}</p>${srcs(p.s)}</div>`).join('');
+// share of exports strip
+const tot=348.7,cn=100.0,us=37.7;
+h+=`<div class="pair share"><h3>Where Brazil's exports go (2025)</h3><div class="strip" role="img" aria-label="China 28.7%, US 10.8%, rest of the world 60.5%"><span style="width:${cn/tot*100}%;background:var(--cn)"></span><span style="width:${us/tot*100}%;background:var(--us)"></span></div><div class="lab"><span>China 28.7%</span><span>US 10.8%</span><span>Rest of the world 60.5%</span></div><p class="note">Total exports of US$348.7 billion. Percentages calculated from government data.</p>${srcs(["mdicCN","mdicUS"])}</div>`;
+document.getElementById('pairs').innerHTML=h;
+
+// where each invests
+const hb=(cap,rows,c,unit)=>{const m=Math.max(...rows.map(r=>r[1]));return `<div class="hb"><span class="cap">${cap}</span>${rows.map(r=>`<div class="r"><span>${r[0]}</span><span class="t"><span class="f" style="--c:${c};width:${r[1]/m*100}%"></span></span><b>${r[2]||r[1].toLocaleString('en-US')}</b></div>`).join('')}</div>`};
+const asset=a=>`<div class="asset"><span class="y">${a[0]}</span><b>${a[1]}</b><p>${a[2]}</p>${srcs(a[3])}</div>`;
+document.getElementById('inv-us').insertAdjacentHTML('beforeend',
+ `<p class="sum">US$232.8 billion in stock, 26% of the total, by the Central Bank's criterion. CNI, with another method, arrives at US$357.8 billion. There are about 3,700 companies, concentrated in industry, financial services and technology.</p>`+
+ hb('Largest announcements, 2020–2024 (US$ bn)',[["Bravo Motor (batteries, Bahia)",4.36,"4.36"],["Microsoft",3.03,"3.03"],["CloudHQ (data centers)",3.00,"3.00"],["Amazon (cloud)",2.84,"2.84"],["New Fortress (gas)",1.26,"1.26"],["ICM (ethanol)",1.22,"1.22"],["Atlas (energy)",1.09,"1.09"]],'var(--us)')+
+ `<p class="sum"><b>For whom:</b> most of the new money goes to cloud and data centers of the companies themselves, which sell this service in Brazil. An announcement is not an investment made: Bravo's battery factory, the largest of them, is still a project.</p>`+srcs(["bcIED","cni"])+
+ asset(["2026","Rare earths in Goiás","The US agency DFC is financing US$565 million of Serra Verde, with an option for the US government to become a minority shareholder.",["serra"]]));
+document.getElementById('inv-cn').insertAdjacentHTML('beforeend',
+ `<p class="sum">US$85.5 billion in 355 projects from 2007 to 2025, according to the CEBC survey. 63% of that value was the purchase of companies that already existed.</p>`+
+ hb('Accumulated projects by sector, 2007–2025 (%)',[["Electric power",43.6,"43.6"],["Oil",28.3,"28.3"],["Industry",8.5,"8.5"],["Mining",8.1,"8.1"],["Infrastructure",4.0,"4.0"],["Agribusiness",3.1,"3.1"],["Other",4.4,"4.4"]],'var(--cn)')+
+ `<p class="sum"><b>For whom:</b> in energy, State Grid has controlled CPFL since 2017 and CTG operates hydro plants such as Ilha Solteira, which means it receives part of the electricity bill. In oil, CNOOC and CNPC take part in pre-salt and Foz do Amazonas blocks, the latter together with the American Chevron. In 2025 most of it was already new builds: BYD and GWM factories and energy projects.</p>`+srcs(["cebcpdf","cebc25"])+
+ asset(["2011–2025","Mines","15% of CBMM (2011, without control), Anglo American's niobium and phosphates by CMOC (2016), Taboca (2024), Anglo's nickel by MMG and Equinox's gold by CMOC (2025).",["cbmm","cmoc","taboca","cebcpdf"]])+
+ asset(["2024–2025","Cars","BYD in Camaçari, where labor prosecutors rescued 220 Chinese workers and sued the company for R$257 million. GWM in a former Mercedes factory in São Paulo, and Geely with 26.4% of Renault do Brasil.",["byd","cebcpdf"]]));
+
+
+
+// who owns strategic assets: country, owner note, color, deals [year, government, asset, how, sources]
+const OWN=[
+ ["China","State companies and sovereign fund of the Chinese government","var(--cn)",[
+  ["2013","Dilma","10% of Libra to CNPC and 10% to CNOOC","Pre-salt auction, alongside Petrobras, Shell and Total.",["libra"]],
+  ["2015","Dilma","Second Belo Monte transmission line, 2,550 km, to State Grid","Aneel transmission auction.",["belo"]],
+  ["2015","Dilma","Jupiá and Ilha Solteira plants, 4,995 MW, to CTG","Auction of plants that belonged to Cesp. Concession fee of R$13.8 billion.",["ctg"]],
+  ["2016","Temer","Stake in NTS, Southeast gas pipelines, to the sovereign fund CIC","Petrobras sold 90% of NTS for US$5.19 billion to a group led by Canada's Brookfield.",["nts"],"nts"],
+  ["2017","Temer","Control of CPFL, about 15% of power distribution, to State Grid","Sale between companies: Camargo Corrêa and pension funds such as Previ and Petros sold 54.6% for R$14.2 billion.",["cpfl","eletr"]],
+  ["2017","Temer","90% of the Paranaguá container terminal to China Merchants","Sale between companies, for R$2.9 billion. It is the country's third-largest container terminal.",["tcp"]],
+  ["2017","Temer","São Simão plant to SPIC","Auction of plants that belonged to Cemig, for R$7.18 billion.",["cemig"],"cemig"],
+  ["2019","Bolsonaro","5% of Búzios to CNODC and 5% to CNOOC","Pre-salt transfer-of-rights auction, alongside Petrobras.",["buzios"]],
+  ["2021","Bolsonaro","Another 5% of Búzios to CNOOC","Petrobras sold it for US$2.08 billion.",["buzios"]],
+  ["2022","Bolsonaro","STS11 grain terminal, in Santos, to COFCO","Port authority auction, for 25 years.",["sts11"]],
+  ["2025","Lula 3","Mantiqueira transmission line, 1,204 km, to State Grid","Sale between companies: Canada's Brookfield sold it for about R$7 billion.",["sgtrans"]]]],
+ ["Italy","Enel, which has the Italian government as its largest shareholder (23.6%)","var(--both)",[
+  ["2016","Temer","Celg-D, the Goiás distributor","Eletrobras sold it in a privatization auction, for R$2.187 billion.",["celg","enel"]],
+  ["2017","Temer","Volta Grande plant","Auction of plants that belonged to Cemig, for R$1.42 billion.",["cemig","enel"],"cemig"],
+  ["2018","Temer","Eletropaulo, the São Paulo distributor","Sale between companies: the American AES sold it for R$5.5 billion. Eletropaulo had been privatized in 1998.",["enel"]]]],
+ ["France","Engie, which has the French state as a shareholder (about 24%)","var(--both)",[
+  ["2017","Temer","Jaguara and Miranda plants","Auction of plants that belonged to Cemig, for R$3.53 billion.",["cemig","engieState"],"cemig"],
+  ["2019","Bolsonaro","TAG, Northeast and North gas pipelines","Petrobras sold it for US$8.6 billion to Engie and the Québec public fund, from Canada.",["tag","engieState"],"tag"]]],
+ ["Canada","Québec and British Columbia public pension funds","var(--both)",[
+  ["2016","Temer","Stake in NTS","Partner in the Brookfield group in buying Petrobras's pipelines.",["nts"],"nts"],
+  ["2019","Bolsonaro","Stake in TAG","Engie's partner in buying Petrobras's pipelines.",["tag"],"tag"]]],
+ ["Norway","Equinor, 67% owned by the Norwegian government","var(--both)",[
+  ["2016","Temer","66% of the Carcará field, in the pre-salt","Petrobras sold it for US$2.5 billion.",["carcara","equinor"]]]],
+ ["United Arab Emirates","Mubadala, Abu Dhabi's sovereign fund","var(--both)",[
+  ["2021","Bolsonaro","RLAM refinery, in Bahia, 14% of the country's refining","Petrobras sold it for US$1.65 billion. Since 2023 Petrobras has been negotiating to become a partner again.",["rlam","mubadala"]]]],
+ ["Singapore","GIC, sovereign fund","var(--both)",[
+  ["2016","Temer","Stake in NTS","Partner in the Brookfield group in buying Petrobras's pipelines.",["nts"],"nts"]]]
+];
+document.getElementById('rank').innerHTML=hb('Deals listed, by country of the owning government',OWN.map(o=>[o[0],o[3].length,String(o[3].length)]),'var(--cn)')+'<p class="sum">China leads by a wide margin: 11 deals, from power plants to ports. The other countries have 1 to 3 each.</p>';
+const seen=new Set(),GOV={"Dilma":0,"Temer":0,"Bolsonaro":0,"Lula 3":0};let PRIV=0;
+OWN.forEach(o=>o[3].forEach(d=>{const key=d[5]||d[2];if(seen.has(key))return;seen.add(key);if(/Venda entre empresas/.test(d[3]))PRIV++;else GOV[d[1]]++;}));
+document.getElementById('porgov').innerHTML=`<span class="cap" style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Who sold or auctioned</span><div class="gov">${Object.entries(GOV).map(([g,n])=>`<div><b>${n}</b><span>${g}</span><small>${n===1?'sale or auction':'sales or auctions'} by the government</small></div>`).join('')}<div><b>${PRIV}</b><span>Between companies</span><small>without the government selling</small></div></div><p class="sum">We count each auction or sale once, even when there was more than one foreign buyer. Most of the sales of Petrobras and Eletrobras assets to these groups took place under Temer and Bolsonaro. Under Lula 3, the deal listed was between companies.</p>`;
+document.getElementById('deals').innerHTML=OWN.map(o=>`<div class="grp" style="--c:${o[2]}"><h3>${o[0]}</h3><span class="who">${o[1]}</span>${o[3].map(d=>`<div class="deal"><span class="y"><b>${d[0]}</b> · government ${d[1]}</span><strong>${d[2]}</strong><p>${d[3]}</p>${srcs(d[4])}</div>`).join('')}</div>`).join('');
+
+// dependence grid
+const depRow=r=>`<div class="row"><span class="area">${r[0]}<small>${r[1]}</small></span><div class="side" style="--c:var(--us)"><b>US</b>${r[2]}</div><div class="side" style="--c:var(--cn)"><b>China</b>${r[3]}</div>${srcs(r[4])}</div>`;
+const DEP=[
+ ["Government and laws","political pressure","Pressured with a tariff citing Bolsonaro's trial. The trial went ahead and the tariff was negotiated.","No public demands about Brazilian laws or government.",["carta","retira40"]],
+ ["Trade","dependence","Buys 10.8% of exports. Brazil has a deficit with the US.","Buys 28.7% of exports, almost three times more. Brazil has a surplus with China.",["mdicUS","mdicCN"]],
+ ["Investment","dependence","26% of all foreign investment in Brazil, the largest of all.","The CEBC survey concentrates projects in electric power (43.6%) and oil; its base does not allow calculating a share of the Central Bank's stock.",["bcIED","cebcpdf"]],
+ ["Finance and the dollar","dependence","When the US sanctioned Moraes, a Brazilian bank blocked his international card. Anyone using the US financial system feels the sanction.","Brazil announced yuan bonds in 2026, still small compared with dollar debt.",["magnbank","yuan"]],
+ ["Technology","dependence","Cloud and data centers: Microsoft, Amazon and others lead investment announcements.","Equipment: Huawei says it is the largest supplier of solar inverters in the country.",["cni","huawei"]],
+ ["Security","dependence","Brazil has been a major non-NATO ally since 2019. In 2026, the US designated CV and PCC as terrorists against the government's request.","Defense cooperation agreement signed in 2011; it is not a mutual defense alliance.",["otan","pcc","defesaCN"]]
+];
+document.getElementById('dep').innerHTML=DEP.map(depRow).join('');
+const RETR=[
+ ["Direct jobs","at the companies","About 4,000 American companies and close to 1 million jobs, according to Amcham.","No total published. Example: BYD has 8,500 employees in Camaçari, and more than 90% of the latest group is from Bahia. It also brought about 2,700 Chinese workers on visas.",["cnnAm","bydjobs","vistos"]],
+ ["New build or acquisition","where the jobs come from","The largest recent announcements are new builds: data centers, a battery factory, gas and ethanol.","63% of the accumulated value of projects was the purchase of companies that already existed, such as power distributors. In 2025, 61% was new builds, according to that survey; that does not mean the modality was new.",["cni","cebcpdf"]],
+ ["Trade-related jobs","2022, formal jobs","Exporting to the US employs about 3.4 million workers, the largest number among partners.","Exporting to China employs about 2 million. According to the study, soy and iron ore use a lot of machinery and few people. Imports from China are linked to 5.6 million jobs.",["cebcjobs"]],
+ ["Who pays the bill","where the revenue comes from","Technology and finance companies sell services to Brazilian companies and consumers.","Chinese distributors and hydro plants are paid through electricity bills, with tariffs set by Aneel.",["cni","cebcpdf"]]
+];
+document.getElementById('ret').innerHTML=RETR.map(depRow).join('');
+
+// timeline: side, date, kind, title, text, sources
+const T=[
+ ["era","Lula 1 and 2 · 2003–2010"],
+ ["br","2003–2005","decision","Brazil blocks the FTAA","Brazil and Argentina resist the US-proposed free trade area, which is buried at the Mar del Plata Summit in 2005.",["alca"]],
+ ["cn","Nov 2004","proposta","Market economy in exchange for agreements","Lula recognizes China as a market economy. China signs ten agreements, promises US$10 billion in investment and opens its market to beef and chicken.",["econ04"]],
+ ["br","Jun 2009","decision","First BRIC summit","Brazil, Russia, India and China hold their first heads-of-state summit, in Yekaterinburg.",["brics09"]],
+ ["cn","2009","trade","China becomes the largest partner","For the first time China overtakes the US in trade with Brazil: US$36.1 billion against US$35.9 billion.",["parc09"]],
+ ["us","2009–2014","disputa","Brazil wins the cotton case","The WTO authorizes Brazil to retaliate against the US for up to US$829 million. The US begins paying US$147 million a year and, in 2014, another US$300 million to settle the case.",["algodao"]],
+ ["era","Dilma · 2011–2016"],
+ ["us","Sep 2013","atrito","NSA spying","Documents leaked by Snowden show the NSA spied on Dilma. She cancels her state visit to Washington.",["nsa"]],
+ ["br","Jul 2014","decision","BRICS create their bank","At the Fortaleza summit, the five countries create the New Development Bank.",["ndb"]],
+ ["cn","2015","compra","Auctions hand plants and a transmission line to Chinese companies","CTG takes Jupiá and Ilha Solteira, and State Grid the second Belo Monte line, 2,550 km long.",["ctg","belo"]],
+ ["era","Temer · 2016–2018"],
+ ["cn","Jan–Sep 2017","compra","State Grid buys CPFL; China Merchants, the Paranaguá port terminal","CPFL is bought from companies and pension funds, and the Paranaguá terminal from private partners. In September, SPIC also takes the São Simão plant in a government auction.",["cpfl","tcp","cemig"]],
+ ["era","Bolsonaro · 2019–2022"],
+ ["us","Mar–Jul 2019","acordo","OECD, WTO and non-NATO ally","Bolsonaro gives up special treatment at the WTO in exchange for US support for the OECD and tariff-free wheat. In July, the US grants Brazil major non-NATO ally status.",["ocde","otan"]],
+ ["cn","Oct 2019","proposta","Bolsonaro goes to Beijing","After criticizing China during the campaign, Bolsonaro visits Xi Jinping to expand trade.",["bolsochina"]],
+ ["cn","Nov 2019","compra","Chinese state companies enter Búzios","In the transfer-of-rights auction, CNODC and CNOOC take 5% each, alongside Petrobras.",["buzios"]],
+ ["cn","Mar 2020","atrito","Eduardo blames China for covid","The Chinese ambassador calls the remark a “malicious insult” and demands an apology. Foreign Minister Ernesto Araújo demands a retraction from the ambassador.",["eduardo"]],
+ ["us","Jun–Jul 2020","pressure and offer","5G without Huawei","The US discusses a fund to finance Ericsson and Nokia equipment. Weeks later, the ambassador says there will be “consequences” if Huawei gets in.",["fundo5g","chapman"]],
+ ["cn","May 2021","atrito","Delay in CoronaVac inputs","Butantan links the delay to Bolsonaro's statements; the embassy denies it and the health minister says the problem is contractual.",["ifa","queiroga"]],
+ ["br","2021","decision","5G auction without a Huawei ban","Anatel's tender does not exclude Chinese suppliers.",["leilao5g"]],
+ ["era","Lula 3 · 2023–today"],
+ ["cn","Feb–Mar 2023","sanitary","Mad cow case suspends beef","Under the protocol between the two countries, Brazil itself suspends shipments. China resumes purchases a month later.",["vaca"]],
+ ["cn","Apr 2023","proposta","Lula in Beijing","Lula and Xi sign 15 agreements, and Lula criticizes the dollar's dominance in trade.",["lula23"]],
+ ["br","Nov 2024","decision","Brazil does not join the Belt and Road","It signs 37 agreements with China during Xi's visit, but does not join the Chinese initiative.",["rota"]],
+ ["cn","May 2025","proposta","R$27 billion in announcements","On Lula's second visit to Beijing, Chinese companies announce investments in Brazil.",["pequim25"]],
+ ["us","Jul 2025","threat","Extra tariff on anyone aligning with BRICS","Trump makes the threat while BRICS leaders meet in Rio.",["brics25"]],
+ ["us","Jul 2025","threat","Letter and 50% tariff","Trump cites Bolsonaro's trial and opens a Section 301 investigation, which includes Pix. The tariff takes effect on August 6.",["carta","tarifa"]],
+ ["us","Jul 2025","sanction","Magnitsky Act against Moraes","The US Treasury sanctions the Supreme Court justice. The reference to his wife requires its own act and date; her inclusion is not attributed to the same event.",["magn"]],
+ ["cn","Nov 2025","compra","State Grid buys the Mantiqueira line","It pays about R$7 billion to Canada's Brookfield and comes to operate close to 10% of the high-voltage grid.",["sgtrans"]],
+ ["us","Nov–Dec 2025","recuo","Beef and coffee leave the tariff; Moraes leaves the list","After negotiation, the US removes the extra 40% tariff on agricultural products and, in December, takes Moraes off the Magnitsky list.",["retira40","magn"]],
+ ["cn","Dec 2025","trade defense","Beef safeguard for everyone","China creates country quotas for three years, with 55% extra above the quota. It applies to Brazil, Argentina, Australia, the US and others.",["salva"]],
+ ["us","Jan 2026","militar","Capture of Maduro","A US military operation in Venezuela takes Maduro to the US. The Brazilian government condemns it.",["maduro"]],
+ ["us","Feb 2026","offer and courts","Rare earths and the Supreme Court","The DFC finances US$565 million of Serra Verde. Two weeks later, the US Supreme Court strikes down Trump's tariffs.",["serra","aosfatos"]],
+ ["us","May 2026","threat","CV and PCC on the terrorist list","Lula goes to the White House to try to prevent it and proposes cooperation against money laundering. The US makes the designation anyway.",["pcc"]],
+ ["br","Jun 2026","decision","Yuan bonds","Finance Minister Dario Durigan announces in Shanghai the first issue of Brazilian debt in Chinese currency.",["yuan"]],
+ ["us","Jul 2026","threat","New 25% tariff, plus 12.5%","The Section 301 investigation ends. Beef, coffee and minerals are left out.",["aosfatos"]],
+ ["br","Sep 2026","decision","Critical minerals law","Lula signs the national policy, with incentives and control instruments over sensitive operations.",["minerais"]],
+ ["cn","Sep–Oct 2026","trade defense","Beef quota used up","China confirms on September 29 that Brazil has hit its quota. Since October 1, the surplus pays 67%.",["cota","cota2"]]
+];
+const C={us:"var(--us)",cn:"var(--cn)",br:"var(--accent)"};
+const tl=document.getElementById('tl');
+tl.innerHTML=T.map(e=>e[0]==='era'?`<li class="era"><span>${e[1]}</span></li>`:`<li class="ev ${e[0]}" data-s="${e[0]}" style="--c:${C[e[0]]}"><span class="dot" aria-hidden="true"></span><div class="card"><span class="d">${e[1]} · <span class="kind">${e[2]}</span></span><b>${e[3]}</b><p>${e[4]}</p>${srcs(e[5])}</div></li>`).join('');
+document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===ch?'true':'false'));
+  const f=ch.dataset.f;tl.querySelectorAll('.ev').forEach(li=>li.hidden=!(f==='all'||li.dataset.s===f));tl.querySelectorAll('.era').forEach(li=>li.hidden=f!=='all');
+}));
+
+const card=m=>`<article class="myth"><span class="side">${m[0]}</span><span class="claim">${m[1]}</span><div><span class="tag ${m[2]}">${m[3]}</span></div><p>${m[4]}</p>${srcs(m[5])}</article>`;
+const MYTHS=[
+ ["Circulates against China","“A Chinese state company bought CPFL”","ok","True","State Grid bought control of CPFL in January 2017, under the Temer government: 54.6% for R$14.2 billion. The sellers were Camargo Corrêa and pension funds such as Previ and Petros. CPFL serves about 15% of the power distribution market.",["cpfl","eletr"]],
+ ["Circulates against China","“China dominates Brazil's logistics: energy, transmission, ports and railways”","no","False","The presence is real, but it is not domination. State Grid operates about 10% of the transmission grid and controls CPFL, with 15% of distribution. In generation, Chinese companies add up to close to 6%. In ports, it controls the Paranaguá container terminal, the country's third largest, and has a grain terminal in Santos. In railways, no Chinese company operates a freight concession; there is only interest in auctions and a partner in a passenger train in São Paulo.",["sgtrans","eletr","tcp","portos","ferro"]],
+ ["Circulates against China","“China is colonizing Brazil”","no","False","Being a colony means losing political control. The investment surveys shown have different bases. Brazil declined to join the Belt and Road and created a critical minerals policy, keeping its own institutions. What is real is the trade dependence: almost 30% of exports go there.",["bcIED","rota","minerais"]],
+ ["Circulates against the US","“Brazil is a US colony”","no","False","Brazil went ahead with Bolsonaro's trial even under US tariffs and sanctions. Dependence on the US is real in finance, technology and investment, but dependence is not being a colony.",["carta","bcIED","magnbank"]],
+ ["Circulates on both sides","“Foreign investment leaves nothing for the people”","part","Half true","Wages, taxes and factories stay here; the profit goes abroad. The return depends on the type: new builds create more jobs than buying an existing company. Exporting to the US employs more Brazilians than exporting to China.",["cebcjobs","cebcpdf","contas"]],
+ ["Circulates against China","“Brazil only loses with China”","no","False","Brazil had a US$29.1 billion surplus with China in 2025 and a US$7.5 billion deficit with the US. The criticism that holds up is a different one: Brazil sells raw materials and buys manufactured goods.",["mdicCN","mdicUS"]],
+ ["Circulates in favor of China","“China only does partnerships, with no self-interest”","no","False","China protects its own industry, as in the beef safeguard, and has economically punished countries such as Australia and Lithuania over political disagreements.",["salva","lituania","australia"]],
+ ["Circulates in favor of China","“The US negotiates with threats, China with offers”","part","Half true","In the selection of episodes on this page, explicit political pressure comes mainly from the US, from 2020 to 2026. But the US also made offers, and China has used economic punishment against other countries.",["chapman","carta","pcc","lituania"]],
+ ["Circulates in favor of the US","“The US is the biggest investor in Brazil”","ok","True","26% of the stock, according to the Central Bank, in industry, finance and technology. Much of the new money goes to the American companies' own data centers.",["bcIED","cni"]],
+ ["Circulates in favor of the US","“The tariff hike is over”","no","False","The US Supreme Court struck down the original tariff in February 2026, but since July a new 25% tariff applies, plus a 12.5% surcharge.",["aosfatos"]],
+ ["Circulates against the US","“The US tariff was because of Bolsonaro”","ok","True","Trump's letter cited Bolsonaro's trial and called it a “witch hunt”. The new 2026 tariff uses other reasons, such as Pix and piracy.",["carta","aosfatos"]],
+ ["Circulates against the PT","“The PT pushed Brazil into China's arms”","part","Half true","China became the largest partner in 2009, under Lula, driven by purchases of soy and iron ore. But the rapprochement continued under Bolsonaro, who visited Beijing in 2019 and did not ban Huawei from 5G.",["parc09","bolsochina","leilao5g"]],
+ ["Circulates in favor of Bolsonaro","“Bolsonaro broke with China”","no","False","There was friction, such as Eduardo Bolsonaro's remark in 2020, but Bolsonaro visited Beijing, China remained the largest buyer and the 5G auction did not exclude Huawei.",["eduardo","bolsochina","leilao5g"]]
+];
+document.getElementById('myths').innerHTML=MYTHS.map(card).join('');
+})();
+</script>
+
+</body></html>
